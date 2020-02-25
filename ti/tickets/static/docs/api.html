@@ -180,8 +180,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </p>
 
       <ul>
-          <li><a href="#4474182416" class="scroll-to">用户测试申请列表</a></li>
-          <li><a href="#4474286224" class="scroll-to">创建用户测试申请</a></li>
+          <li><a href="#4465707792" class="scroll-to">用户测试申请列表</a></li>
+          <li><a href="#4465788368" class="scroll-to">创建用户测试申请</a></li>
+          <li><a href="#4474184144" class="scroll-to">用户上线申请列表</a></li>
+          <li><a href="#4474184208" class="scroll-to">创建用户测试申请</a></li>
       </ul>
 
       <hr>
@@ -189,7 +191,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 
 
-        <h1 id="4474182416">用户测试申请列表</h1>
+        <h1 id="4465707792">用户测试申请列表</h1>
 
           <div class="endpoint get">/api/tickets/consumer_trial_apply/</div>
 
@@ -293,7 +295,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <hr>
 
 
-        <h1 id="4474286224">创建用户测试申请</h1>
+        <h1 id="4465788368">创建用户测试申请</h1>
 
           <div class="endpoint post">/api/tickets/consumer_trial_apply/</div>
 
@@ -721,6 +723,514 @@ viewBox="0 0 500 500"
     "creator_mobile": "13402110752",
     "creator_email": "22@44.com",
     "description": "afjasjf\r\nasdflkas\r\n\r\n\r\nasfsf"
+}</code></pre>
+
+
+
+        <hr>
+
+
+        <h1 id="4474184144">用户上线申请列表</h1>
+
+          <div class="endpoint get">/api/tickets/consumer_launch_apply/</div>
+
+
+
+
+            <table>
+              <thead>
+                <tr>
+                    <th>Query 参数</th>
+                    <th>类型</th>
+                    <th>描述</th>
+                    <th>必须</th>
+                    <th>默认值</th>
+                    <th>示例</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><code>user_department</code></td>
+                    <td><em>string</em></td>
+                    <td>指定用户部门</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>creator</code></td>
+                    <td><em>string</em></td>
+                    <td>指定创建人</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>org_name_zh</code></td>
+                    <td><em>string</em></td>
+                    <td>匹配机构中文名称</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>org_name_en</code></td>
+                    <td><em>string</em></td>
+                    <td>匹配机构英文名称</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>org_number</code></td>
+                    <td><em>string</em></td>
+                    <td>指定社会统一信用代码/组织机构代码</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+              </tbody>
+            </table>
+
+
+
+
+            <p>
+                示例返回结果:
+            </p>
+            <pre><code class="lang-json">{
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "username": "test11",
+            "oa_number": "xxx",
+            "category": 2,
+            "org_name_zh": "测测次",
+            "org_name_en": "test",
+            "org_number": "1234567890987654",
+            "org_address": "",
+            "user_department": "testdepartment",
+            "user_project": "testproj",
+            "user_product": "testprod",
+            "server_ips": "",
+            "contact_person": "张三",
+            "contact_mobile": "13402110752",
+            "contact_email": "ta@admin.com",
+            "related_products": "",
+            "creator": "ff",
+            "creator_mobile": "134012342212",
+            "creator_email": "22@44.com",
+            "description": ""
+        }
+    ]
+}</code></pre>
+
+
+
+        <hr>
+
+
+        <h1 id="4474184208">创建用户测试申请</h1>
+
+          <div class="endpoint post">/api/tickets/consumer_trial_apply/</div>
+
+
+
+
+
+            <table>
+              <thead>
+                <tr>
+                    <th>Body 参数</th>
+                    <th>类型</th>
+                    <th>描述</th>
+                    <th>必须</th>
+                    <th>默认值</th>
+                    <th>示例</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><code>username</code></td>
+                    <td><em>string</em></td>
+                    <td>用户账号(唯一标识对该用户授权访问的一个访问通道编码。编码规则：机构中文全拼缩写（小写 ）+ 4位16进制随机编码，由业务输入系统 （系统应具备验证用户名唯一性功能）。用户账号由业务生成，生成的过程中，能够校验账号的唯一性)</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>oa_number</code></td>
+                    <td><em>string</em></td>
+                    <td>用户申请使用生产系统的产品，需要先签订合同，并OA审批通过</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>category</code></td>
+                    <td><em>int</em></td>
+                    <td>用户类型(1 内部用户； 2 外部用户)</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>org_name_zh</code></td>
+                    <td><em>string</em></td>
+                    <td>机构中文名称(可以为空，但是中英文单位名称必须填一个)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>org_name_en</code></td>
+                    <td><em>string</em></td>
+                    <td>机构英文名称(可以为空，但是中英文单位名称必须填一个)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>org_number</code></td>
+                    <td><em>string</em></td>
+                    <td>社会统一信用代码/组织机构代码 (用于客户业务校核，客户的中英文名称应该与社会统一信用代码一致)</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>org_address</code></td>
+                    <td><em>string</em></td>
+                    <td>机构地址(可以为空)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>user_department</code></td>
+                    <td><em>string</em></td>
+                    <td>用户部门(主要是配置必要的辅助信息，用于对账，内部用户必填)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>user_project</code></td>
+                    <td><em>string</em></td>
+                    <td>用户项目(内部用户必填)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>user_product</code></td>
+                    <td><em>string</em></td>
+                    <td>用户产品(内部用户必填)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>server_ips</code></td>
+                    <td><em>string</em></td>
+                    <td>服务器IP(用于配置白名单，多个IP以逗号分隔)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>contact_person</code></td>
+                    <td><em>string</em></td>
+                    <td>联系人(必填)</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>contact_mobile</code></td>
+                    <td><em>string</em></td>
+                    <td>联系人手机号码(必填)</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>contact_email</code></td>
+                    <td><em>string</em></td>
+                    <td>联系人邮箱(必填)</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>related_products</code></td>
+                    <td><em>string</em></td>
+                    <td>用户关联产品(多个产品以逗号分隔)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>creator</code></td>
+                    <td><em>string</em></td>
+                    <td>创建人(必填)</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>creator_mobile</code></td>
+                    <td><em>string</em></td>
+                    <td>创建人手机号码(必填)</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>creator_email</code></td>
+                    <td><em>string</em></td>
+                    <td>创建人邮箱(必填)</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>description</code></td>
+                    <td><em>string</em></td>
+                    <td>描述(可以描述附加的客户需求)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+              </tbody>
+            </table>
+
+              <p>
+                Content-Types:
+                  <code>application/json</code>
+                  <code>application/x-www-form-urlencoded</code>
+                  <code>multipart/form-data</code>
+              </p>
+
+
+
+
+            <p>
+                示例返回结果:
+            </p>
+            <pre><code class="lang-json">{
+    "id": 2,
+    "username": "test112",
+    "oa_number": "xxx",
+    "category": 2,
+    "org_name_zh": "测测次",
+    "org_name_en": "test",
+    "org_number": "1234567890987654",
+    "org_address": "",
+    "user_department": "testdepartment",
+    "user_project": "testproj",
+    "user_product": "testprod",
+    "server_ips": "",
+    "contact_person": "张三",
+    "contact_mobile": "13402110752",
+    "contact_email": "ta@admin.com",
+    "related_products": "",
+    "creator": "ff",
+    "creator_mobile": "134012342212",
+    "creator_email": "22@44.com",
+    "description": ""
 }</code></pre>
 
 
