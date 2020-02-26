@@ -24,6 +24,7 @@ class ConsumerTrialApply(models.Model):
     creator = models.CharField(max_length=64, blank=True, verbose_name='创建人', help_text='必填')
     creator_mobile = models.CharField(max_length=64, blank=True, verbose_name='创建人手机号码', help_text='必填')
     creator_email = models.CharField(max_length=64, blank=True, verbose_name='创建人邮箱', help_text='必填')
+    creator_department = models.CharField(max_length=64, blank=True, verbose_name='创建人部门', help_text='必填')
     description = models.TextField(blank=True, verbose_name='描述', help_text='可以描述附加的客户需求')
 
 
@@ -49,6 +50,7 @@ class ConsumerLaunchApply(models.Model):
     creator = models.CharField(max_length=64, blank=True, verbose_name='创建人', help_text='必填')
     creator_mobile = models.CharField(max_length=64, blank=True, verbose_name='创建人手机号码', help_text='必填')
     creator_email = models.CharField(max_length=64, blank=True, verbose_name='创建人邮箱', help_text='必填')
+    creator_department = models.CharField(max_length=64, blank=True, verbose_name='创建人部门', help_text='必填')
     description = models.TextField(blank=True, verbose_name='描述', help_text='可以描述附加的客户需求')
 
 
@@ -66,6 +68,7 @@ class VendorApply(models.Model):
     creator = models.CharField(max_length=64, blank=True, verbose_name='创建人', help_text='必填')
     creator_mobile = models.CharField(max_length=64, blank=True, verbose_name='创建人手机号码', help_text='必填')
     creator_email = models.CharField(max_length=64, blank=True, verbose_name='创建人邮箱', help_text='必填')
+    creator_department = models.CharField(max_length=64, blank=True, verbose_name='创建人部门', help_text='必填')
     score = models.IntegerField(default=0, verbose_name='评分', help_text='评分分为1~5分，最开始进入系统都为0分')
     risk = models.IntegerField(default=0, verbose_name='风险', help_text='风险分为1~5级，最开始进入系统都为0级，没有风险')
     communication = models.TextField(blank=True, verbose_name='沟通记录', help_text='与供应商沟通后，特别需要关注的问题')
@@ -86,8 +89,8 @@ class VendorApiApply(models.Model):
     params_in_sensitive = models.TextField(blank=True, verbose_name='入参敏感字段', help_text='必填')
     params_out_sensitive = models.TextField(blank=True, verbose_name='出参敏感字段', help_text='必填')
     use_cache = models.BooleanField(default=False, verbose_name='是否缓存', help_text='必填，是否使用缓存热数据返回用户')
-    cache_ms = models.IntegerField(default=0, verbose_name='缓存时间（毫秒）', help_text='必填')
-    timeout_ms = models.IntegerField(default=0, verbose_name='超时时间（毫秒）', help_text='必填')
+    cache_ms = models.IntegerField(default=0, verbose_name='缓存时间/毫秒', help_text='必填')
+    timeout_ms = models.IntegerField(default=0, verbose_name='超时时间/毫秒', help_text='必填')
     field = models.CharField(max_length=64, blank=True, verbose_name='使用领域', help_text='必填')
     alarm_total_count = models.IntegerField(default=0, verbose_name='报警总观测次数', help_text='必填，报警累计次数')
     alarm_fail_count = models.IntegerField(default=0, verbose_name='失败数报警阀值', help_text='必填，失败几次开始报警')
@@ -95,6 +98,10 @@ class VendorApiApply(models.Model):
     start = models.CharField(max_length=64, blank=True, verbose_name='开始时间', help_text='API合同生效时间')
     send = models.CharField(max_length=64, blank=True, verbose_name='结束时间', help_text='API合同结束时间')
     version = models.CharField(max_length=64, blank=True, verbose_name='版本号', help_text='必填，API目前注册版本号')
+    creator = models.CharField(max_length=64, blank=True, verbose_name='创建人', help_text='必填')
+    creator_mobile = models.CharField(max_length=64, blank=True, verbose_name='创建人手机号码', help_text='必填')
+    creator_email = models.CharField(max_length=64, blank=True, verbose_name='创建人邮箱', help_text='必填')
+    creator_department = models.CharField(max_length=64, blank=True, verbose_name='创建人部门', help_text='必填')
     remark = models.TextField(blank=True, verbose_name='备注', help_text='可以为空，补充信息')
 
 
@@ -117,6 +124,10 @@ class ProductLaunchApply(models.Model):
     params_in = models.TextField(blank=True, verbose_name='入参', help_text='必填')
     params_in_sensitive = models.TextField(blank=True, verbose_name='入参敏感字段', help_text='必填')
     params_out_sensitive = models.TextField(blank=True, verbose_name='出参敏感字段', help_text='必填')
+    creator = models.CharField(max_length=64, blank=True, verbose_name='创建人', help_text='必填')
+    creator_mobile = models.CharField(max_length=64, blank=True, verbose_name='创建人手机号码', help_text='必填')
+    creator_email = models.CharField(max_length=64, blank=True, verbose_name='创建人邮箱', help_text='必填')
+    creator_department = models.CharField(max_length=64, blank=True, verbose_name='创建人部门', help_text='必填')
     remark = models.TextField(blank=True, verbose_name='备注', help_text='可以为空，补充信息')
 
 
