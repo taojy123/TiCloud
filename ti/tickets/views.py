@@ -4,9 +4,9 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from django_filters import rest_framework as filters
 
-from tickets.models import ConsumerTrialApply, ConsumerLaunchApply, VendorApply, VendorApiApply
+from tickets.models import ConsumerTrialApply, ConsumerLaunchApply, VendorApply, VendorApiApply, ProductLaunchApply
 from tickets.serializers import ConsumerTrialApplySerializer, ConsumerLaunchApplySerializer, VendorApplySerializer, \
-    VendorApiApplySerializer
+    VendorApiApplySerializer, ProductLaunchApplySerializer
 
 
 def redirect_to_doc(request):
@@ -19,7 +19,6 @@ class ConsumerTrialApplyFilter(filters.FilterSet):
     class Meta:
         model = ConsumerTrialApply
         fields = {
-            'id': ['exact', 'in'],
             'creator': ['exact'],
             'creator_department': ['exact'],
             'org_name_zh': ['icontains'],
@@ -40,7 +39,6 @@ class ConsumerLaunchApplyFilter(filters.FilterSet):
     class Meta:
         model = ConsumerLaunchApply
         fields = {
-            'id': ['exact', 'in'],
             'creator': ['exact'],
             'creator_department': ['exact'],
             'org_name_zh': ['icontains'],
@@ -61,7 +59,6 @@ class VendorApplyFilter(filters.FilterSet):
     class Meta:
         model = VendorApply
         fields = {
-            'id': ['exact', 'in'],
             'creator': ['exact'],
             'creator_department': ['exact'],
             'org_name_zh': ['icontains'],
@@ -81,7 +78,6 @@ class VendorApiApplyFilter(filters.FilterSet):
     class Meta:
         model = VendorApiApply
         fields = {
-            'id': ['exact', 'in'],
             'creator': ['exact'],
             'creator_department': ['exact'],
             'org_code': ['icontains'],
@@ -94,6 +90,25 @@ class VendorApiApplyViewSet(viewsets.ModelViewSet):
     serializer_class = VendorApiApplySerializer
     filter_class = VendorApiApplyFilter
     queryset = VendorApiApply.objects.order_by('id')
+
+
+class ProductLaunchApplyFilter(filters.FilterSet):
+    order_by = filters.OrderingFilter(fields=['id', 'org_code'])
+
+    class Meta:
+        model = ProductLaunchApply
+        fields = {
+            'creator': ['exact'],
+            'creator_department': ['exact'],
+            'product_number': ['icontains'],
+            'product_name': ['icontains'],
+        }
+
+
+class ProductLaunchApplyViewSet(viewsets.ModelViewSet):
+    serializer_class = ProductLaunchApplySerializer
+    filter_class = ProductLaunchApplyFilter
+    queryset = ProductLaunchApply.objects.order_by('id')
 
 
 

@@ -180,14 +180,16 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </p>
 
       <ul>
-          <li><a href="#4438477584" class="scroll-to">用户测试申请列表</a></li>
-          <li><a href="#4438589584" class="scroll-to">创建用户测试申请</a></li>
-          <li><a href="#4446850192" class="scroll-to">用户上线申请列表</a></li>
-          <li><a href="#4446850256" class="scroll-to">创建用户上线申请</a></li>
-          <li><a href="#4446850832" class="scroll-to">第三方供应商注册申请列表</a></li>
-          <li><a href="#4446880144" class="scroll-to">创建第三方供应商注册申请</a></li>
-          <li><a href="#4446879952" class="scroll-to">第三方API接入申请列表</a></li>
-          <li><a href="#4446880656" class="scroll-to">创建第三方API接入申请</a></li>
+          <li><a href="#4557781456" class="scroll-to">用户测试申请列表</a></li>
+          <li><a href="#4564031888" class="scroll-to">创建用户测试申请</a></li>
+          <li><a href="#4564062544" class="scroll-to">用户上线申请列表</a></li>
+          <li><a href="#4564062608" class="scroll-to">创建用户上线申请</a></li>
+          <li><a href="#4564063120" class="scroll-to">第三方供应商注册申请列表</a></li>
+          <li><a href="#4564063312" class="scroll-to">创建第三方供应商注册申请</a></li>
+          <li><a href="#4564063504" class="scroll-to">第三方API接入申请列表</a></li>
+          <li><a href="#4564064208" class="scroll-to">创建第三方API接入申请</a></li>
+          <li><a href="#4564063888" class="scroll-to">产品上线申请列表</a></li>
+          <li><a href="#4564063696" class="scroll-to">创建产品上线申请</a></li>
       </ul>
 
       <hr>
@@ -195,7 +197,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 
 
-        <h1 id="4438477584">用户测试申请列表</h1>
+        <h1 id="4557781456">用户测试申请列表</h1>
 
           <div class="endpoint get">/api/tickets/consumer_trial_apply/</div>
 
@@ -300,7 +302,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <hr>
 
 
-        <h1 id="4438589584">创建用户测试申请</h1>
+        <h1 id="4564031888">创建用户测试申请</h1>
 
           <div class="endpoint post">/api/tickets/consumer_trial_apply/</div>
 
@@ -765,7 +767,7 @@ viewBox="0 0 500 500"
         <hr>
 
 
-        <h1 id="4446850192">用户上线申请列表</h1>
+        <h1 id="4564062544">用户上线申请列表</h1>
 
           <div class="endpoint get">/api/tickets/consumer_launch_apply/</div>
 
@@ -869,7 +871,7 @@ viewBox="0 0 500 500"
         <hr>
 
 
-        <h1 id="4446850256">创建用户上线申请</h1>
+        <h1 id="4564062608">创建用户上线申请</h1>
 
           <div class="endpoint post">/api/tickets/consumer_launch_apply/</div>
 
@@ -1304,7 +1306,7 @@ viewBox="0 0 500 500"
         <hr>
 
 
-        <h1 id="4446850832">第三方供应商注册申请列表</h1>
+        <h1 id="4564063120">第三方供应商注册申请列表</h1>
 
           <div class="endpoint get">/api/tickets/vendor_apply/</div>
 
@@ -1395,7 +1397,7 @@ viewBox="0 0 500 500"
         <hr>
 
 
-        <h1 id="4446880144">创建第三方供应商注册申请</h1>
+        <h1 id="4564063312">创建第三方供应商注册申请</h1>
 
           <div class="endpoint post">/api/tickets/vendor_apply/</div>
 
@@ -1856,7 +1858,7 @@ viewBox="0 0 500 500"
         <hr>
 
 
-        <h1 id="4446879952">第三方API接入申请列表</h1>
+        <h1 id="4564063504">第三方API接入申请列表</h1>
 
           <div class="endpoint get">/api/tickets/vendor_api_apply/</div>
 
@@ -1935,7 +1937,7 @@ viewBox="0 0 500 500"
         <hr>
 
 
-        <h1 id="4446880656">创建第三方API接入申请</h1>
+        <h1 id="4564064208">创建第三方API接入申请</h1>
 
           <div class="endpoint post">/api/tickets/vendor_api_apply/</div>
 
@@ -2595,6 +2597,327 @@ viewBox="0 0 500 500"
     "start": "",
     "send": "",
     "version": "",
+    "remark": ""
+}</code></pre>
+
+
+
+        <hr>
+
+
+        <h1 id="4564063888">产品上线申请列表</h1>
+
+          <div class="endpoint get">/api/tickets/product_launch_apply/</div>
+
+
+
+
+            <table>
+              <thead>
+                <tr>
+                    <th>Query 参数</th>
+                    <th>类型</th>
+                    <th>描述</th>
+                    <th>必须</th>
+                    <th>默认值</th>
+                    <th>示例</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><code>creator</code></td>
+                    <td><em>string</em></td>
+                    <td>指定创建人</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>creator_department</code></td>
+                    <td><em>string</em></td>
+                    <td>指定创建人部门</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>product_number</code></td>
+                    <td><em>string</em></td>
+                    <td>匹配产品编号</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>product_name</code></td>
+                    <td><em>string</em></td>
+                    <td>匹配产品名称</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+              </tbody>
+            </table>
+
+
+
+
+            <p>
+                示例返回结果:
+            </p>
+            <pre><code class="lang-json">{
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "product_number": "test222",
+            "product_name": "fasfa",
+            "source_numbers": "fasdf",
+            "manager_name": "张三",
+            "manager_mobile": "13402110752",
+            "manager_email": "tss@tq.com",
+            "use_cache": true,
+            "cache_ms": 222,
+            "timeout_ms": 344,
+            "alarm_total_count": 32,
+            "alarm_fail_count": 22,
+            "alarm_timeout_count": 2,
+            "params_in": "",
+            "params_in_sensitive": "",
+            "params_out_sensitive": "",
+            "creator": "ff",
+            "creator_mobile": "13402110752",
+            "creator_email": "22@44.com",
+            "creator_department": "",
+            "remark": ""
+        }
+    ]
+}</code></pre>
+
+
+
+        <hr>
+
+
+        <h1 id="4564063696">创建产品上线申请</h1>
+
+          <div class="endpoint post">/api/tickets/product_launch_apply/</div>
+
+
+
+
+
+            <table>
+              <thead>
+                <tr>
+                    <th>Body 参数</th>
+                    <th>类型</th>
+                    <th>描述</th>
+                    <th>必须</th>
+                    <th>默认值</th>
+                    <th>示例</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><code>product_number</code></td>
+                    <td><em>string</em></td>
+                    <td>产品编号(唯一标识)</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>product_name</code></td>
+                    <td><em>string</em></td>
+                    <td>产品名称(必填)</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>source_numbers</code></td>
+                    <td><em>string</em></td>
+                    <td>数据源编码(必填，来自第三方API接入或者内部开发数据源，多个数据源以逗号分隔)</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>manager_name</code></td>
+                    <td><em>string</em></td>
+                    <td>产品经理姓名(必填)</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>manager_mobile</code></td>
+                    <td><em>string</em></td>
+                    <td>产品经理手机号码(必填)</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>manager_email</code></td>
+                    <td><em>string</em></td>
+                    <td>产品经理邮箱(必填)</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>use_cache</code></td>
+                    <td><em>bool</em></td>
+                    <td>是否缓存(必填，是否使用缓存热数据返回用户)</td>
+                    <td></td>
+                    <td>False</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>cache_ms</code></td>
+                    <td><em>int</em></td>
+                    <td>缓存时间（毫秒）(必填)</td>
+                    <td></td>
+                    <td>0</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>timeout_ms</code></td>
+                    <td><em>int</em></td>
+                    <td>超时时间（毫秒）(必填)</td>
+                    <td></td>
+                    <td>0</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>alarm_total_count</code></td>
+                    <td><em>int</em></td>
+                    <td>报警总观测次数(必填，报警累计次数)</td>
+                    <td></td>
+                    <td>0</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>alarm_fail_count</code></td>
+                    <td><em>int</em></td>
+                    <td>失败数报警阀值(必填，失败几次开始报警)</td>
+                    <td></td>
+                    <td>0</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>alarm_timeout_count</code></td>
+                    <td><em>int</em></td>
+                    <td>超时报警阀值(必填)</td>
+                    <td></td>
+                    <td>0</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>params_in</code></td>
+                    <td><em>string</em></td>
+                    <td>入参(必填)</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>params_in_sensitive</code></td>
+                    <td><em>string</em></td>
+                    <td>入参敏感字段(必填)</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>params_out_sensitive</code></td>
+                    <td><em>string</em></td>
+                    <td>出参敏感字段(必填)</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>creator</code></td>
+                    <td><em>string</em></td>
+                    <td>创建人(必填)</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>creator_mobile</code></td>
+                    <td><em>string</em></td>
+                    <td>创建人手机号码(必填)</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>creator_email</code></td>
+                    <td><em>string</em></td>
+                    <td>创建人邮箱(必填)</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>creator_department</code></td>
+                    <td><em>string</em></td>
+                    <td>创建人部门(必填)</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>remark</code></td>
+                    <td><em>string</em></td>
+                    <td>备注(可以为空，补充信息)</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+              </tbody>
+            </table>
+
+              <p>
+                Content-Types:
+                  <code>application/json</code>
+                  <code>application/x-www-form-urlencoded</code>
+                  <code>multipart/form-data</code>
+              </p>
+
+
+
+
+            <p>
+                示例返回结果:
+            </p>
+            <pre><code class="lang-json">{
+    "id": 1,
+    "product_number": "test222",
+    "product_name": "fasfa",
+    "source_numbers": "fasdf",
+    "manager_name": "张三",
+    "manager_mobile": "13402110752",
+    "manager_email": "tss@tq.com",
+    "use_cache": true,
+    "cache_ms": 222,
+    "timeout_ms": 344,
+    "alarm_total_count": 32,
+    "alarm_fail_count": 22,
+    "alarm_timeout_count": 2,
+    "params_in": "",
+    "params_in_sensitive": "",
+    "params_out_sensitive": "",
+    "creator": "ff",
+    "creator_mobile": "13402110752",
+    "creator_email": "22@44.com",
+    "creator_department": "",
     "remark": ""
 }</code></pre>
 

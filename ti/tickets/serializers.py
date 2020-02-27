@@ -1,7 +1,7 @@
 import random
 from rest_framework import serializers, exceptions
 
-from tickets.models import ConsumerTrialApply, ConsumerLaunchApply, VendorApply, VendorApiApply
+from tickets.models import ConsumerTrialApply, ConsumerLaunchApply, VendorApply, VendorApiApply, ProductLaunchApply
 
 
 class ConsumerTrialApplySerializer(serializers.ModelSerializer):
@@ -39,5 +39,15 @@ class VendorApiApplySerializer(serializers.ModelSerializer):
         fields = ['id', 'org_code', 'product_name', 'api_code', 'product_description', 'api_url', 'params_in',
                   'params_in_sensitive', 'params_out_sensitive', 'use_cache', 'cache_ms', 'timeout_ms', 'field',
                   'alarm_total_count', 'alarm_fail_count', 'alarm_timeout_count', 'start', 'send', 'version', 'remark']
+
+
+class ProductLaunchApplySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = ProductLaunchApply
+        fields = ['id', 'product_number', 'product_name', 'source_numbers', 'manager_name', 'manager_mobile',
+                  'manager_email', 'use_cache', 'cache_ms', 'timeout_ms', 'alarm_total_count', 'alarm_fail_count',
+                  'alarm_timeout_count', 'params_in', 'params_in_sensitive', 'params_out_sensitive', 'creator',
+                  'creator_mobile', 'creator_email', 'creator_department', 'remark']
 
 
