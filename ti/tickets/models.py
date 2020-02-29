@@ -131,4 +131,29 @@ class ProductLaunchApply(models.Model):
     remark = models.TextField(blank=True, verbose_name='备注', help_text='可以为空，补充信息')
 
 
+class Ticket(models.Model):
+    """
+    工单
+    """
+    number = models.CharField(max_length=128, blank=True, unique=True, verbose_name='工单号', help_text='唯一标识，编码规则中指定关联的申请记录id')
+    title = models.CharField(max_length=128, blank=True, verbose_name='任务主题')
+    creator = models.CharField(max_length=32, blank=True, verbose_name='申请人姓名')
+    creator_department = models.CharField(max_length=64, blank=True, verbose_name='申请人部门')
+    creator_job = models.CharField(max_length=32, blank=True, verbose_name='申请人职位')
+    status = models.CharField(max_length=32, blank=True, verbose_name='工单状态')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
+
+
+class TicketFlow(models.Model):
+    """
+    工单审批记录
+    """
+    ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE, verbose_name='工单')
+    sequence = models.IntegerField(default=0, verbose_name='流程次序')
+    handler_name = models.CharField(max_length=32, blank=True, verbose_name='审批人')
+    result = models.CharField(max_length=32, blank=True, verbose_name='审批结果')
+    content = models.TextField(blank=True, verbose_name='审批意见')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
+
+
 
