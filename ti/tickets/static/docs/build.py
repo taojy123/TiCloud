@@ -116,6 +116,6 @@ doc.apis.append(api2)
 
 api1, api2 = new_restful_apis('工单', '/api/tickets/ticket/', TicketViewSet)
 doc.apis.append(api1)
-doc.apis.append(api2)
+# doc.apis.append(api2)
 
 doc.build('api.html', 'zh')
