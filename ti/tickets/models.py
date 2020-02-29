@@ -143,6 +143,13 @@ class Ticket(models.Model):
     status = models.CharField(max_length=32, blank=True, verbose_name='工单状态')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
 
+    def __str__(self):
+        return self.number
+
+    @property
+    def flows(self):
+        return self.ticketflow_set.order_by('sequence')
+
 
 class TicketFlow(models.Model):
     """

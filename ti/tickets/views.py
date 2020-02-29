@@ -4,9 +4,10 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from django_filters import rest_framework as filters
 
-from tickets.models import ConsumerTrialApply, ConsumerLaunchApply, VendorApply, VendorApiApply, ProductLaunchApply
+from tickets.models import ConsumerTrialApply, ConsumerLaunchApply, VendorApply, VendorApiApply, ProductLaunchApply, \
+    Ticket
 from tickets.serializers import ConsumerTrialApplySerializer, ConsumerLaunchApplySerializer, VendorApplySerializer, \
-    VendorApiApplySerializer, ProductLaunchApplySerializer
+    VendorApiApplySerializer, ProductLaunchApplySerializer, TicketSerializer
 
 
 def redirect_to_doc(request):
@@ -109,6 +110,25 @@ class ProductLaunchApplyViewSet(viewsets.ModelViewSet):
     serializer_class = ProductLaunchApplySerializer
     filter_class = ProductLaunchApplyFilter
     queryset = ProductLaunchApply.objects.order_by('id')
+
+
+class TicketFilter(filters.FilterSet):
+    order_by = filters.OrderingFilter(fields=['id', 'org_code'])
+
+    class Meta:
+        model = Ticket
+        fields = {
+            'title': ['icontains'],
+            'creator': ['exact'],
+            'creator_department': ['exact'],
+            'creator_job': ['exact'],
+        }
+
+
+class TicketViewSet(viewsets.ModelViewSet):
+    serializer_class = TicketSerializer
+    filter_class = TicketFilter
+    queryset = Ticket.objects.order_by('id')
 
 
 

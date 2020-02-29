@@ -10,7 +10,7 @@ import django
 django.setup()
 
 from tickets.views import ProductLaunchApplyViewSet, ConsumerTrialApplyViewSet, ConsumerLaunchApplyViewSet, \
-    VendorApplyViewSet, VendorApiApplyViewSet
+    VendorApplyViewSet, VendorApiApplyViewSet, TicketViewSet
 
 LOCALHOST = 'http://127.0.0.1:8000'
 
@@ -111,6 +111,10 @@ doc.apis.append(api1)
 doc.apis.append(api2)
 
 api1, api2 = new_restful_apis('产品上线申请', '/api/tickets/product_launch_apply/', ProductLaunchApplyViewSet)
+doc.apis.append(api1)
+doc.apis.append(api2)
+
+api1, api2 = new_restful_apis('工单', '/api/tickets/ticket/', TicketViewSet)
 doc.apis.append(api1)
 doc.apis.append(api2)
 
