@@ -1,7 +1,16 @@
+from django.apps import apps
 from django.db import models
 
 
-class ConsumerTrialApply(models.Model):
+class RelateMixin:
+    
+    @property
+    def ticket(self):
+        relate_code = f'{self.__class__.__name__}_{self.id}'
+        return Ticket.objects.filter(relate_code=relate_code).first()
+    
+
+class ConsumerTrialApply(RelateMixin, models.Model):
     """
     用户测试申请
     """
@@ -28,7 +37,7 @@ class ConsumerTrialApply(models.Model):
     description = models.TextField(blank=True, verbose_name='描述', help_text='可以描述附加的客户需求')
 
 
-class ConsumerLaunchApply(models.Model):
+class ConsumerLaunchApply(RelateMixin, models.Model):
     """
     用户上线申请
     """
@@ -54,7 +63,7 @@ class ConsumerLaunchApply(models.Model):
     description = models.TextField(blank=True, verbose_name='描述', help_text='可以描述附加的客户需求')
 
 
-class VendorApply(models.Model):
+class VendorApply(RelateMixin, models.Model):
     """
     第三方供应商注册申请
     """
@@ -65,29 +74,29 @@ class VendorApply(models.Model):
     contact_mobile = models.CharField(max_length=64, blank=True, verbose_name='联系人手机号码', help_text='必填')
     contact_email = models.CharField(max_length=64, blank=True, verbose_name='联系人邮箱', help_text='必填')
     org_address = models.CharField(max_length=256, blank=True, verbose_name='机构地址', help_text='可以为空')
-    creator = models.CharField(max_length=64, blank=True, verbose_name='创建人', help_text='必填')
-    creator_mobile = models.CharField(max_length=64, blank=True, verbose_name='创建人手机号码', help_text='必填')
-    creator_email = models.CharField(max_length=64, blank=True, verbose_name='创建人邮箱', help_text='必填')
-    creator_department = models.CharField(max_length=64, blank=True, verbose_name='创建人部门', help_text='必填')
     score = models.IntegerField(default=0, verbose_name='评分', help_text='评分分为1~5分，最开始进入系统都为0分')
     risk = models.IntegerField(default=0, verbose_name='风险', help_text='风险分为1~5级，最开始进入系统都为0级，没有风险')
     communication = models.TextField(blank=True, verbose_name='沟通记录', help_text='与供应商沟通后，特别需要关注的问题')
     industry = models.CharField(max_length=64, blank=True, verbose_name='所属行业', help_text='必填')
+    creator = models.CharField(max_length=64, blank=True, verbose_name='创建人', help_text='必填')
+    creator_mobile = models.CharField(max_length=64, blank=True, verbose_name='创建人手机号码', help_text='必填')
+    creator_email = models.CharField(max_length=64, blank=True, verbose_name='创建人邮箱', help_text='必填')
+    creator_department = models.CharField(max_length=64, blank=True, verbose_name='创建人部门', help_text='必填')
     description = models.TextField(blank=True, verbose_name='描述', help_text='可以描述附加的客户需求')
 
 
-class VendorApiApply(models.Model):
+class VendorApiApply(RelateMixin, models.Model):
     """
     第三方供应商API接入申请
     """
-    org_code = models.CharField(max_length=64, blank=True, verbose_name='机构账编码', help_text='供应商的唯一标识。编码规则：机构中文全拼缩写（小写 ）+ 4位16进制随机编码，由业务输入系统 （系统应具备验证用户名唯一性功能）。用户账号由业务生成，生成的过程中，能够校验账号的唯一性。该账号也是供应商访问日志的登录账号')
+    org_code = models.CharField(max_length=64, blank=True, verbose_name='机构编码', help_text='供应商的唯一标识。编码规则：机构中文全拼缩写（小写 ）+ 4位16进制随机编码，由业务输入系统 （系统应具备验证用户名唯一性功能）。用户账号由业务生成，生成的过程中，能够校验账号的唯一性。该账号也是供应商访问日志的登录账号')
     product_name = models.CharField(max_length=64, blank=True, verbose_name='产品名称', help_text='必填')
     api_code = models.CharField(max_length=64, blank=True, verbose_name='API编码', help_text='必填，满足数据源编码规范，参考《数据产品编码规范》')
     product_description = models.CharField(max_length=64, blank=True, verbose_name='产品定义', help_text='必填，产品描述')
     api_url = models.CharField(max_length=64, blank=True, verbose_name='API访问URL', help_text='必填')
-    params_in = models.TextField(blank=True, verbose_name='入参', help_text='必填')
-    params_in_sensitive = models.TextField(blank=True, verbose_name='入参敏感字段', help_text='必填')
-    params_out_sensitive = models.TextField(blank=True, verbose_name='出参敏感字段', help_text='必填')
+    params_in = models.TextField(blank=True, default='{}', verbose_name='入参', help_text='必填')
+    params_in_sensitive = models.TextField(blank=True, default='{}', verbose_name='入参敏感字段', help_text='必填')
+    params_out_sensitive = models.TextField(blank=True, default='{}', verbose_name='出参敏感字段', help_text='必填')
     use_cache = models.BooleanField(default=False, verbose_name='是否缓存', help_text='必填，是否使用缓存热数据返回用户')
     cache_ms = models.IntegerField(default=0, verbose_name='缓存时间/毫秒', help_text='必填')
     timeout_ms = models.IntegerField(default=0, verbose_name='超时时间/毫秒', help_text='必填')
@@ -105,7 +114,7 @@ class VendorApiApply(models.Model):
     remark = models.TextField(blank=True, verbose_name='备注', help_text='可以为空，补充信息')
 
 
-class ProductLaunchApply(models.Model):
+class ProductLaunchApply(RelateMixin, models.Model):
     """
     产品上线申请
     """
@@ -121,9 +130,9 @@ class ProductLaunchApply(models.Model):
     alarm_total_count = models.IntegerField(default=0, verbose_name='报警总观测次数', help_text='必填，报警累计次数')
     alarm_fail_count = models.IntegerField(default=0, verbose_name='失败数报警阀值', help_text='必填，失败几次开始报警')
     alarm_timeout_count = models.IntegerField(default=0, verbose_name='超时报警阀值', help_text='必填')
-    params_in = models.TextField(blank=True, verbose_name='入参', help_text='必填')
-    params_in_sensitive = models.TextField(blank=True, verbose_name='入参敏感字段', help_text='必填')
-    params_out_sensitive = models.TextField(blank=True, verbose_name='出参敏感字段', help_text='必填')
+    params_in = models.TextField(blank=True, default='{}', verbose_name='入参', help_text='必填')
+    params_in_sensitive = models.TextField(blank=True, default='{}', verbose_name='入参敏感字段', help_text='必填')
+    params_out_sensitive = models.TextField(blank=True, default='{}', verbose_name='出参敏感字段', help_text='必填')
     creator = models.CharField(max_length=64, blank=True, verbose_name='创建人', help_text='必填')
     creator_mobile = models.CharField(max_length=64, blank=True, verbose_name='创建人手机号码', help_text='必填')
     creator_email = models.CharField(max_length=64, blank=True, verbose_name='创建人邮箱', help_text='必填')
@@ -135,11 +144,12 @@ class Ticket(models.Model):
     """
     工单
     """
-    number = models.CharField(max_length=128, blank=True, unique=True, verbose_name='工单号', help_text='唯一标识，编码规则中指定关联的申请记录id')
+    number = models.CharField(max_length=128, blank=True, unique=True, verbose_name='工单号', help_text='唯一标识')
+    relate_code = models.CharField(max_length=128, blank=True, verbose_name='关联代码', help_text='系统自动生成，用于绑定申请记录')
     title = models.CharField(max_length=128, blank=True, verbose_name='任务主题')
-    creator = models.CharField(max_length=32, blank=True, verbose_name='申请人姓名')
-    creator_department = models.CharField(max_length=64, blank=True, verbose_name='申请人部门')
-    creator_job = models.CharField(max_length=32, blank=True, verbose_name='申请人职位')
+    applicant = models.CharField(max_length=32, blank=True, verbose_name='申请人姓名')
+    applicant_department = models.CharField(max_length=64, blank=True, verbose_name='申请人部门')
+    applicant_job = models.CharField(max_length=32, blank=True, verbose_name='申请人职位')
     status = models.CharField(max_length=32, blank=True, verbose_name='工单状态')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
 
@@ -150,6 +160,27 @@ class Ticket(models.Model):
     def flows(self):
         return self.ticketflow_set.order_by('sequence')
 
+    @property
+    def apply(self):
+        if '_' not in self.relate_code:
+            return
+        model_name, apply_id = self.relate_code.split('_')
+        ModelClass = apps.get_model('tickets', model_name)
+        return ModelClass.objects.filter(id=apply_id).first()
+    
+    @property
+    def apply_uri(self):
+        if not self.apply:
+            return
+        model_name, apply_id = self.relate_code.split('_')
+        res_name = ''
+        for char in model_name:
+            if char.isupper():
+                char = '_' + char
+            res_name += char
+        res_name = res_name.lower().strip('_')
+        return f'/api/tickets/{res_name}/{apply_id}/'
+    
 
 class TicketFlow(models.Model):
     """
@@ -160,7 +191,7 @@ class TicketFlow(models.Model):
     handler_name = models.CharField(max_length=32, blank=True, verbose_name='审批人')
     result = models.CharField(max_length=32, blank=True, verbose_name='审批结果')
     content = models.TextField(blank=True, verbose_name='审批意见')
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='更新时间')
 
 
 

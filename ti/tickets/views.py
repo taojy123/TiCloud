@@ -119,9 +119,9 @@ class TicketFilter(filters.FilterSet):
         model = Ticket
         fields = {
             'title': ['icontains'],
-            'creator': ['exact'],
-            'creator_department': ['exact'],
-            'creator_job': ['exact'],
+            'applicant': ['exact'],
+            'applicant_department': ['exact'],
+            'applicant_job': ['exact'],
         }
 
 
