@@ -180,18 +180,22 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </p>
 
       <ul>
-          <li><a href="#1803635172296" class="scroll-to">创建用户测试申请</a></li>
-          <li><a href="#1803635737376" class="scroll-to">用户测试申请详情</a></li>
-          <li><a href="#1803635171848" class="scroll-to">创建用户上线申请</a></li>
-          <li><a href="#1803636103544" class="scroll-to">用户上线申请详情</a></li>
-          <li><a href="#1803635174760" class="scroll-to">创建第三方供应商注册申请</a></li>
-          <li><a href="#1803636358000" class="scroll-to">第三方供应商注册申请详情</a></li>
-          <li><a href="#1803636358336" class="scroll-to">创建第三方API接入申请</a></li>
-          <li><a href="#1803635739000" class="scroll-to">第三方API接入申请详情</a></li>
-          <li><a href="#1803636101416" class="scroll-to">创建产品上线申请</a></li>
-          <li><a href="#1803635786080" class="scroll-to">产品上线申请详情</a></li>
-          <li><a href="#1803631768576" class="scroll-to">工单列表</a></li>
-          <li><a href="#1803635739672" class="scroll-to">创建工单</a></li>
+          <li><a href="#1929899581624" class="scroll-to">用户登录</a></li>
+          <li><a href="#1929902502632" class="scroll-to">系统用户列表</a></li>
+          <li><a href="#1929902767464" class="scroll-to">创建用户注册申请</a></li>
+          <li><a href="#1929903016368" class="scroll-to">用户注册申请详情</a></li>
+          <li><a href="#1929903017936" class="scroll-to">创建用户订单申请</a></li>
+          <li><a href="#1929903199568" class="scroll-to">用户订单申请详情</a></li>
+          <li><a href="#1929902503808" class="scroll-to">创建用户测试申请</a></li>
+          <li><a href="#1929903370424" class="scroll-to">用户测试申请详情</a></li>
+          <li><a href="#1929903201136" class="scroll-to">创建第三方供应商注册申请</a></li>
+          <li><a href="#1929903547224" class="scroll-to">第三方供应商注册申请详情</a></li>
+          <li><a href="#1929903200128" class="scroll-to">创建第三方API接入申请</a></li>
+          <li><a href="#1929903274192" class="scroll-to">第三方API接入申请详情</a></li>
+          <li><a href="#1929903547448" class="scroll-to">创建产品上线申请</a></li>
+          <li><a href="#1929903016648" class="scroll-to">产品上线申请详情</a></li>
+          <li><a href="#1929903372272" class="scroll-to">工单列表</a></li>
+          <li><a href="#1929902934616" class="scroll-to">工单详情</a></li>
       </ul>
 
       <hr>
@@ -199,7 +203,997 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 
 
-        <h1 id="1803635172296">创建用户测试申请</h1>
+        <h1 id="1929899581624">用户登录</h1>
+
+          <div class="endpoint post">/api/login/</div>
+
+
+            <div class="alert alert-ee"><p>使用用户名密码登录系统，换取 token</p>
+</div>
+
+
+
+            <table>
+              <thead>
+                <tr>
+                    <th>Body 参数</th>
+                    <th>类型</th>
+                    <th>描述</th>
+                    <th>必须</th>
+                    <th>默认值</th>
+                    <th>示例</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><code>username</code></td>
+                    <td><em>string</em></td>
+                    <td>用户名</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>password</code></td>
+                    <td><em>string</em></td>
+                    <td>密码</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+              </tbody>
+            </table>
+
+              <p>
+                Content-Types:
+                  <code>application/json</code>
+                  <code>application/x-www-form-urlencoded</code>
+                  <code>multipart/form-data</code>
+              </p>
+
+
+
+
+            <p>
+                示例返回结果:
+            </p>
+            <pre><code class="lang-json">{"token": "xxxxx.yyyy.zzzzz"}</code></pre>
+
+            <div class="alert alert-warning">
+              <p>请在前端保存下返回的 token，之后每次请求接口时需将 token 置于 Headers 中，如：</p>
+<pre><code>curl -H "Authorization: JWT xxxxx.yyyy.zzzzz" http://172.23.43.15:8882/api/
+</code></pre>
+
+            </div>
+
+
+        <hr>
+
+
+        <h1 id="1929902502632">系统用户列表</h1>
+
+          <div class="endpoint get">/api/tickets/user/</div>
+
+
+
+
+            <table>
+              <thead>
+                <tr>
+                    <th>Query 参数</th>
+                    <th>类型</th>
+                    <th>描述</th>
+                    <th>必须</th>
+                    <th>默认值</th>
+                    <th>示例</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><code>full_name__icontains</code></td>
+                    <td><em>string</em></td>
+                    <td>匹配姓名</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+              </tbody>
+            </table>
+
+
+
+
+            <p>
+                示例返回结果:
+            </p>
+            <pre><code class="lang-json">{
+    "count": 5,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "username": "test",
+            "email": "test@123.com",
+            "full_name": "张三",
+            "mobile": "13412345678",
+            "department": "DDC",
+            "job": "产品总监",
+            "leader": null
+        }
+    ]
+}</code></pre>
+
+
+
+        <hr>
+
+
+        <h1 id="1929902767464">创建用户注册申请</h1>
+
+          <div class="endpoint post">/api/tickets/consumer_register_apply/</div>
+
+
+
+
+
+            <table>
+              <thead>
+                <tr>
+                    <th>Body 参数</th>
+                    <th>类型</th>
+                    <th>描述</th>
+                    <th>必须</th>
+                    <th>默认值</th>
+                    <th>示例</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><code>title</code></td>
+                    <td><em>string</em></td>
+                    <td>工单任务主题</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
+                    <td><class 'rest_framework.fields.empty'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>applicant_username</code></td>
+                    <td><em>string</em></td>
+                    <td>工单申请人 [一般是自己]</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
+                    <td><class 'rest_framework.fields.empty'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>maintainer_username</code></td>
+                    <td><em>string</em></td>
+                    <td>关系维护人 [可以填其他人]</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
+                    <td><class 'rest_framework.fields.empty'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>name</code></td>
+                    <td><em>string</em></td>
+                    <td>用户名称 [一般是中文]</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>username</code></td>
+                    <td><em>string</em></td>
+                    <td>用户账号 [唯一标识对该用户授权访问的一个访问通道编码。编码规则：机构中文全拼缩写（小写 ）+ 4位16进制随机编码，由业务输入系统 （系统应具备验证用户名唯一性功能）。用户账号由业务生成，生成的过程中，能够校验账号的唯一性]</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>category</code></td>
+                    <td><em>int</em></td>
+                    <td>用户类型 [1 内部用户； 2 外部用户]</td>
+                    <td></td>
+                    <td>0</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>org_name_zh</code></td>
+                    <td><em>string</em></td>
+                    <td>机构中文名称 [必填]</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>org_name_en</code></td>
+                    <td><em>string</em></td>
+                    <td>机构英文名称 [可以为空]</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>org_number</code></td>
+                    <td><em>string</em></td>
+                    <td>社会统一信用代码/组织机构代码 [必填，用于客户业务校核，客户的中英文名称应该与社会统一信用代码一致]</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>org_address</code></td>
+                    <td><em>string</em></td>
+                    <td>机构地址 [可以为空]</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>server_ips</code></td>
+                    <td><em>string</em></td>
+                    <td>服务器IP [用于配置白名单，多个IP以逗号分隔]</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>contact_person</code></td>
+                    <td><em>string</em></td>
+                    <td>联系人 [必填]</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>contact_mobile</code></td>
+                    <td><em>string</em></td>
+                    <td>联系人手机 [必填]</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>contact_email</code></td>
+                    <td><em>string</em></td>
+                    <td>联系人邮箱 [必填]</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>score</code></td>
+                    <td><em>int</em></td>
+                    <td>评分 [评分分为1~5分，最开始进入系统都为0分]</td>
+                    <td></td>
+                    <td>0</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>risk</code></td>
+                    <td><em>int</em></td>
+                    <td>风险 [风险分为1~5级，最开始进入系统都为0级，没有风险]</td>
+                    <td></td>
+                    <td>0</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>communication</code></td>
+                    <td><em>string</em></td>
+                    <td>沟通记录 [与供应商沟通后，特别需要关注的问题]</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>industry</code></td>
+                    <td><em>string</em></td>
+                    <td>所属行业 [必填]</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>description</code></td>
+                    <td><em>string</em></td>
+                    <td>描述 [可以描述附加的需求]</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+              </tbody>
+            </table>
+
+              <p>
+                Content-Types:
+                  <code>application/json</code>
+                  <code>application/x-www-form-urlencoded</code>
+                  <code>multipart/form-data</code>
+              </p>
+
+
+
+
+            <p>
+                示例返回结果:
+            </p>
+            <pre><code class="lang-json">{
+    "id": 1,
+    "ticket": {
+        "id": 1,
+        "flows": [],
+        "attachments": [],
+        "apply_uri": "/api/tickets/consumer_register_apply/1/",
+        "applicant": {
+            "id": 2,
+            "username": "test2",
+            "email": "test2@123.com",
+            "full_name": "李四",
+            "mobile": "13212345678",
+            "department": "DDC",
+            "job": "产品经理",
+            "leader": {
+                "id": 1,
+                "username": "test",
+                "email": "test@123.com",
+                "full_name": "张三",
+                "mobile": "13412345678",
+                "department": "DDC",
+                "job": "产品总监"
+            }
+        },
+        "maintainer": {
+            "id": 2,
+            "username": "test2",
+            "email": "test2@123.com",
+            "full_name": "李四",
+            "mobile": "13212345678",
+            "department": "DDC",
+            "job": "产品经理",
+            "leader": {
+                "id": 1,
+                "username": "test",
+                "email": "test@123.com",
+                "full_name": "张三",
+                "mobile": "13412345678",
+                "department": "DDC",
+                "job": "产品总监"
+            }
+        },
+        "number": "4368ca4594044a2f9e2978c28621772b",
+        "relate_code": "ConsumerRegisterApply_1",
+        "title": "工单主题12",
+        "status": "审批中",
+        "created_at": "2020-03-03T18:21:02.337776+08:00",
+        "creator": null
+    },
+    "name": "test2",
+    "username": "xxxxxx",
+    "category": 1,
+    "org_name_zh": "测测次",
+    "org_name_en": "test",
+    "org_number": "",
+    "org_address": "",
+    "server_ips": "",
+    "contact_person": "",
+    "contact_mobile": "",
+    "contact_email": "",
+    "score": 0,
+    "risk": 0,
+    "communication": "",
+    "industry": "",
+    "description": ""
+}</code></pre>
+
+
+
+        <hr>
+
+
+        <h1 id="1929903016368">用户注册申请详情</h1>
+
+          <div class="endpoint get">/api/tickets/consumer_register_apply/&lt;id&gt;/</div>
+
+
+
+            <table>
+              <thead>
+                <tr>
+                    <th>Uri 参数</th>
+                    <th>类型</th>
+                    <th>描述</th>
+                    <th>必须</th>
+                    <th>默认值</th>
+                    <th>示例</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><code>id</code></td>
+                    <td><em>string</em></td>
+                    <td>用户注册申请 ID</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
+                    <td></td>
+                    <td>1</td>
+                  </tr>
+              </tbody>
+            </table>
+
+
+
+
+
+            <p>
+                示例返回结果:
+            </p>
+            <pre><code class="lang-json">{
+    "id": 1,
+    "ticket": {
+        "id": 1,
+        "flows": [],
+        "attachments": [],
+        "apply_uri": "/api/tickets/consumer_register_apply/1/",
+        "applicant": {
+            "id": 2,
+            "username": "test2",
+            "email": "test2@123.com",
+            "full_name": "李四",
+            "mobile": "13212345678",
+            "department": "DDC",
+            "job": "产品经理",
+            "leader": {
+                "id": 1,
+                "username": "test",
+                "email": "test@123.com",
+                "full_name": "张三",
+                "mobile": "13412345678",
+                "department": "DDC",
+                "job": "产品总监"
+            }
+        },
+        "maintainer": {
+            "id": 2,
+            "username": "test2",
+            "email": "test2@123.com",
+            "full_name": "李四",
+            "mobile": "13212345678",
+            "department": "DDC",
+            "job": "产品经理",
+            "leader": {
+                "id": 1,
+                "username": "test",
+                "email": "test@123.com",
+                "full_name": "张三",
+                "mobile": "13412345678",
+                "department": "DDC",
+                "job": "产品总监"
+            }
+        },
+        "number": "4368ca4594044a2f9e2978c28621772b",
+        "relate_code": "ConsumerRegisterApply_1",
+        "title": "工单主题12",
+        "status": "审批中",
+        "created_at": "2020-03-03T18:21:02.337776+08:00",
+        "creator": null
+    },
+    "name": "test2",
+    "username": "xxxxxx",
+    "category": 1,
+    "org_name_zh": "测测次",
+    "org_name_en": "test",
+    "org_number": "",
+    "org_address": "",
+    "server_ips": "",
+    "contact_person": "",
+    "contact_mobile": "",
+    "contact_email": "",
+    "score": 0,
+    "risk": 0,
+    "communication": "",
+    "industry": "",
+    "description": ""
+}</code></pre>
+
+
+
+        <hr>
+
+
+        <h1 id="1929903017936">创建用户订单申请</h1>
+
+          <div class="endpoint post">/api/tickets/consumer_order_apply/</div>
+
+
+
+
+
+            <table>
+              <thead>
+                <tr>
+                    <th>Body 参数</th>
+                    <th>类型</th>
+                    <th>描述</th>
+                    <th>必须</th>
+                    <th>默认值</th>
+                    <th>示例</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><code>title</code></td>
+                    <td><em>string</em></td>
+                    <td>工单任务主题</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
+                    <td><class 'rest_framework.fields.empty'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>applicant_username</code></td>
+                    <td><em>string</em></td>
+                    <td>工单申请人 [一般是自己]</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
+                    <td><class 'rest_framework.fields.empty'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>maintainer_username</code></td>
+                    <td><em>string</em></td>
+                    <td>关系维护人 [可以填其他人]</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
+                    <td><class 'rest_framework.fields.empty'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>username</code></td>
+                    <td><em>string</em></td>
+                    <td>用户账号 [唯一标识]</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>oa_number</code></td>
+                    <td><em>string</em></td>
+                    <td>协议OA审批编号 [用户申请使用生产系统的产品，需要先签订合同，并OA审批通过]</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>contract_status</code></td>
+                    <td><em>string</em></td>
+                    <td>合同状态 [审批通过，才能申请订单]</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>user_department</code></td>
+                    <td><em>string</em></td>
+                    <td>用户部门 [主要是配置必要的辅助信息，用于对账，内部用户必填]</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>user_project</code></td>
+                    <td><em>string</em></td>
+                    <td>用户项目 [内部用户必填]</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>user_product</code></td>
+                    <td><em>string</em></td>
+                    <td>用户产品 [内部用户必填]</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>related_products</code></td>
+                    <td><em>string</em></td>
+                    <td>用户关联产品编码 [多个产品以逗号分隔]</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>test_count</code></td>
+                    <td><em>int</em></td>
+                    <td>生产接入测试条数 [默认5条]</td>
+                    <td></td>
+                    <td>5</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><code>description</code></td>
+                    <td><em>string</em></td>
+                    <td>描述 [可以描述附加的需求]</td>
+                    <td></td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
+                    <td></td>
+                  </tr>
+              </tbody>
+            </table>
+
+              <p>
+                Content-Types:
+                  <code>application/json</code>
+                  <code>application/x-www-form-urlencoded</code>
+                  <code>multipart/form-data</code>
+              </p>
+
+
+
+
+            <p>
+                示例返回结果:
+            </p>
+            <pre><code class="lang-json">{
+    "id": 1,
+    "ticket": {
+        "id": 2,
+        "flows": [],
+        "attachments": [],
+        "apply_uri": "/api/tickets/consumer_order_apply/1/",
+        "applicant": {
+            "id": 2,
+            "username": "test2",
+            "email": "test2@123.com",
+            "full_name": "李四",
+            "mobile": "13212345678",
+            "department": "DDC",
+            "job": "产品经理",
+            "leader": {
+                "id": 1,
+                "username": "test",
+                "email": "test@123.com",
+                "full_name": "张三",
+                "mobile": "13412345678",
+                "department": "DDC",
+                "job": "产品总监"
+            }
+        },
+        "maintainer": {
+            "id": 1,
+            "username": "test",
+            "email": "test@123.com",
+            "full_name": "张三",
+            "mobile": "13412345678",
+            "department": "DDC",
+            "job": "产品总监",
+            "leader": null
+        },
+        "number": "6f3fdc2fb96f44eeb7c74caaf20e97f3",
+        "relate_code": "ConsumerOrderApply_1",
+        "title": "工单主题1222",
+        "status": "审批中",
+        "created_at": "2020-03-03T18:26:59.289294+08:00",
+        "creator": null
+    },
+    "username": "xxfasfa",
+    "oa_number": "afasf",
+    "contract_status": "审批通过",
+    "user_department": "测试部门",
+    "user_project": "",
+    "user_product": "",
+    "related_products": "",
+    "test_count": 2,
+    "description": ""
+}</code></pre>
+
+
+
+        <hr>
+
+
+        <h1 id="1929903199568">用户订单申请详情</h1>
+
+          <div class="endpoint get">/api/tickets/consumer_order_apply/&lt;id&gt;/</div>
+
+
+
+            <table>
+              <thead>
+                <tr>
+                    <th>Uri 参数</th>
+                    <th>类型</th>
+                    <th>描述</th>
+                    <th>必须</th>
+                    <th>默认值</th>
+                    <th>示例</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><code>id</code></td>
+                    <td><em>string</em></td>
+                    <td>用户订单申请 ID</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
+                    <td></td>
+                    <td>1</td>
+                  </tr>
+              </tbody>
+            </table>
+
+
+
+
+
+            <p>
+                示例返回结果:
+            </p>
+            <pre><code class="lang-json">{
+    "id": 1,
+    "ticket": {
+        "id": 2,
+        "flows": [],
+        "attachments": [],
+        "apply_uri": "/api/tickets/consumer_order_apply/1/",
+        "applicant": {
+            "id": 2,
+            "username": "test2",
+            "email": "test2@123.com",
+            "full_name": "李四",
+            "mobile": "13212345678",
+            "department": "DDC",
+            "job": "产品经理",
+            "leader": {
+                "id": 1,
+                "username": "test",
+                "email": "test@123.com",
+                "full_name": "张三",
+                "mobile": "13412345678",
+                "department": "DDC",
+                "job": "产品总监"
+            }
+        },
+        "maintainer": {
+            "id": 1,
+            "username": "test",
+            "email": "test@123.com",
+            "full_name": "张三",
+            "mobile": "13412345678",
+            "department": "DDC",
+            "job": "产品总监",
+            "leader": null
+        },
+        "number": "6f3fdc2fb96f44eeb7c74caaf20e97f3",
+        "relate_code": "ConsumerOrderApply_1",
+        "title": "工单主题1222",
+        "status": "审批中",
+        "created_at": "2020-03-03T18:26:59.289294+08:00",
+        "creator": null
+    },
+    "username": "xxfasfa",
+    "oa_number": "afasf",
+    "contract_status": "审批通过",
+    "user_department": "测试部门",
+    "user_project": "",
+    "user_product": "",
+    "related_products": "",
+    "test_count": 2,
+    "description": ""
+}</code></pre>
+
+
+
+        <hr>
+
+
+        <h1 id="1929902503808">创建用户测试申请</h1>
 
           <div class="endpoint post">/api/tickets/consumer_trial_apply/</div>
 
@@ -249,26 +1243,60 @@ viewBox="0 0 500 500"
                     <td></td>
                   </tr>
                   <tr>
-                    <td><code>applicant</code></td>
+                    <td><code>applicant_username</code></td>
                     <td><em>string</em></td>
-                    <td>工单申请人 [可以代别人申请]</td>
-                    <td></td>
+                    <td>工单申请人 [一般是自己]</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
                     <td><class 'rest_framework.fields.empty'></td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td><code>applicant_department</code></td>
+                    <td><code>maintainer_username</code></td>
                     <td><em>string</em></td>
-                    <td>工单申请人部门</td>
-                    <td></td>
-                    <td><class 'rest_framework.fields.empty'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>applicant_job</code></td>
-                    <td><em>string</em></td>
-                    <td>工单申请人职位</td>
-                    <td></td>
+                    <td>关系维护人 [可以填其他人]</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
                     <td><class 'rest_framework.fields.empty'></td>
                     <td></td>
                   </tr>
@@ -283,47 +1311,7 @@ viewBox="0 0 500 500"
                   <tr>
                     <td><code>oa_number</code></td>
                     <td><em>string</em></td>
-                    <td>协议OA审批编号 [用户申请测试，如果测试连接第三方生产环境，有费用发生，需要走OA流程，知会财务；如果是自己数据源，小宇100条免费，可以不用走OA，大于100条需要走OA流程审批]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>category</code></td>
-                    <td><em>int</em></td>
-                    <td>用户类型 [1 内部用户； 2 外部用户]</td>
-                    <td></td>
-                    <td>0</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>org_name_zh</code></td>
-                    <td><em>string</em></td>
-                    <td>机构中文名称 [可以为空，但是中英文单位名称必须填一个]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>org_name_en</code></td>
-                    <td><em>string</em></td>
-                    <td>机构英文名称 [可以为空，但是中英文单位名称必须填一个]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>org_number</code></td>
-                    <td><em>string</em></td>
-                    <td>社会统一信用代码/组织机构代码 [用于客户业务校核，客户的中英文名称应该与社会统一信用代码一致]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>org_address</code></td>
-                    <td><em>string</em></td>
-                    <td>机构地址 [可以为空]</td>
+                    <td>协议OA审批编号 [可以为空]</td>
                     <td></td>
                     <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
                     <td></td>
@@ -361,73 +1349,9 @@ viewBox="0 0 500 500"
                     <td></td>
                   </tr>
                   <tr>
-                    <td><code>server_ips</code></td>
-                    <td><em>string</em></td>
-                    <td>服务器IP [用于配置白名单，多个IP以逗号分隔]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>contact_person</code></td>
-                    <td><em>string</em></td>
-                    <td>联系人 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>contact_mobile</code></td>
-                    <td><em>string</em></td>
-                    <td>联系人手机号码 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>contact_email</code></td>
-                    <td><em>string</em></td>
-                    <td>联系人邮箱 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
                     <td><code>related_products</code></td>
                     <td><em>string</em></td>
-                    <td>用户关联产品 [多个产品以逗号分隔]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>creator</code></td>
-                    <td><em>string</em></td>
-                    <td>创建人 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>creator_mobile</code></td>
-                    <td><em>string</em></td>
-                    <td>创建人手机号码 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>creator_email</code></td>
-                    <td><em>string</em></td>
-                    <td>创建人邮箱 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>creator_department</code></td>
-                    <td><em>string</em></td>
-                    <td>创建人部门 [必填]</td>
+                    <td>用户关联产品编码 [多个产品以逗号分隔]</td>
                     <td></td>
                     <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
                     <td></td>
@@ -435,7 +1359,7 @@ viewBox="0 0 500 500"
                   <tr>
                     <td><code>description</code></td>
                     <td><em>string</em></td>
-                    <td>描述 [可以描述附加的客户需求]</td>
+                    <td>描述 [可以描述附加的需求]</td>
                     <td></td>
                     <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
                     <td></td>
@@ -459,7 +1383,7 @@ viewBox="0 0 500 500"
             <pre><code class="lang-json">{
     "id": 1,
     "ticket": {
-        "id": 1,
+        "id": 3,
         "flows": [
             {
                 "id": 1,
@@ -467,8 +1391,8 @@ viewBox="0 0 500 500"
                 "handler_name": "test",
                 "result": "",
                 "content": "",
-                "updated_at": "2020-03-02T16:17:59.090975+08:00",
-                "ticket": 1
+                "updated_at": "2020-03-03T18:27:25.156808+08:00",
+                "ticket": 3
             },
             {
                 "id": 2,
@@ -476,40 +1400,54 @@ viewBox="0 0 500 500"
                 "handler_name": "test2",
                 "result": "",
                 "content": "",
-                "updated_at": "2020-03-02T16:17:59.096972+08:00",
-                "ticket": 1
+                "updated_at": "2020-03-03T18:27:25.162791+08:00",
+                "ticket": 3
             }
         ],
+        "attachments": [],
         "apply_uri": "/api/tickets/consumer_trial_apply/1/",
-        "number": "f1b2d9c8e9d042b9828fa811aac2352d",
+        "applicant": {
+            "id": 3,
+            "username": "test3",
+            "email": "test3@123.com",
+            "full_name": "王五",
+            "mobile": "13312345678",
+            "department": "ITC",
+            "job": "开发总监",
+            "leader": null
+        },
+        "maintainer": {
+            "id": 4,
+            "username": "test4",
+            "email": "test4@123.com",
+            "full_name": "赵六",
+            "mobile": "13612345678",
+            "department": "ITC",
+            "job": "工程师",
+            "leader": {
+                "id": 3,
+                "username": "test3",
+                "email": "test3@123.com",
+                "full_name": "王五",
+                "mobile": "13312345678",
+                "department": "ITC",
+                "job": "开发总监"
+            }
+        },
+        "number": "fb20ba064cf84aadb55731c2cb9789a7",
         "relate_code": "ConsumerTrialApply_1",
-        "title": "测试工单主题",
-        "applicant": "张三",
-        "applicant_department": "DDC",
-        "applicant_job": "项目经理",
-        "status": "未提交",
-        "created_at": "2020-03-02T16:17:59.084974+08:00"
+        "title": "工单主题144",
+        "status": "审批中",
+        "created_at": "2020-03-03T18:27:25.148844+08:00",
+        "creator": null
     },
-    "username": "xxxxxx1",
-    "oa_number": "xxxxxx2",
-    "category": 1,
-    "org_name_zh": "测测次",
-    "org_name_en": "test",
-    "org_number": "1234567890987654",
-    "org_address": "x33",
+    "username": "afsacasdf",
+    "oa_number": "",
     "user_department": "测试部门",
-    "user_project": "测试项目",
-    "user_product": "测试产品",
-    "test_count": 222,
-    "server_ips": "122.33.22.11",
-    "contact_person": "张三",
-    "contact_mobile": "13402110752",
-    "contact_email": "ta@admin.com",
-    "related_products": "fss,fff,s333",
-    "creator": "ff",
-    "creator_mobile": "13402110752",
-    "creator_email": "22@44.com",
-    "creator_department": "xx",
+    "user_project": "",
+    "user_product": "",
+    "test_count": 100,
+    "related_products": "",
     "description": ""
 }</code></pre>
 
@@ -518,7 +1456,7 @@ viewBox="0 0 500 500"
         <hr>
 
 
-        <h1 id="1803635737376">用户测试申请详情</h1>
+        <h1 id="1929903370424">用户测试申请详情</h1>
 
           <div class="endpoint get">/api/tickets/consumer_trial_apply/&lt;id&gt;/</div>
 
@@ -578,7 +1516,7 @@ viewBox="0 0 500 500"
             <pre><code class="lang-json">{
     "id": 1,
     "ticket": {
-        "id": 1,
+        "id": 3,
         "flows": [
             {
                 "id": 1,
@@ -586,8 +1524,8 @@ viewBox="0 0 500 500"
                 "handler_name": "test",
                 "result": "",
                 "content": "",
-                "updated_at": "2020-03-02T16:17:59.090975+08:00",
-                "ticket": 1
+                "updated_at": "2020-03-03T18:27:25.156808+08:00",
+                "ticket": 3
             },
             {
                 "id": 2,
@@ -595,331 +1533,54 @@ viewBox="0 0 500 500"
                 "handler_name": "test2",
                 "result": "",
                 "content": "",
-                "updated_at": "2020-03-02T16:17:59.096972+08:00",
-                "ticket": 1
+                "updated_at": "2020-03-03T18:27:25.162791+08:00",
+                "ticket": 3
             }
         ],
+        "attachments": [],
         "apply_uri": "/api/tickets/consumer_trial_apply/1/",
-        "number": "f1b2d9c8e9d042b9828fa811aac2352d",
+        "applicant": {
+            "id": 3,
+            "username": "test3",
+            "email": "test3@123.com",
+            "full_name": "王五",
+            "mobile": "13312345678",
+            "department": "ITC",
+            "job": "开发总监",
+            "leader": null
+        },
+        "maintainer": {
+            "id": 4,
+            "username": "test4",
+            "email": "test4@123.com",
+            "full_name": "赵六",
+            "mobile": "13612345678",
+            "department": "ITC",
+            "job": "工程师",
+            "leader": {
+                "id": 3,
+                "username": "test3",
+                "email": "test3@123.com",
+                "full_name": "王五",
+                "mobile": "13312345678",
+                "department": "ITC",
+                "job": "开发总监"
+            }
+        },
+        "number": "fb20ba064cf84aadb55731c2cb9789a7",
         "relate_code": "ConsumerTrialApply_1",
-        "title": "测试工单主题",
-        "applicant": "张三",
-        "applicant_department": "DDC",
-        "applicant_job": "项目经理",
-        "status": "未提交",
-        "created_at": "2020-03-02T16:17:59.084974+08:00"
+        "title": "工单主题144",
+        "status": "审批中",
+        "created_at": "2020-03-03T18:27:25.148844+08:00",
+        "creator": null
     },
-    "username": "xxxxxx1",
-    "oa_number": "xxxxxx2",
-    "category": 1,
-    "org_name_zh": "测测次",
-    "org_name_en": "test",
-    "org_number": "1234567890987654",
-    "org_address": "x33",
+    "username": "afsacasdf",
+    "oa_number": "",
     "user_department": "测试部门",
-    "user_project": "测试项目",
-    "user_product": "测试产品",
-    "test_count": 222,
-    "server_ips": "122.33.22.11",
-    "contact_person": "张三",
-    "contact_mobile": "13402110752",
-    "contact_email": "ta@admin.com",
-    "related_products": "fss,fff,s333",
-    "creator": "ff",
-    "creator_mobile": "13402110752",
-    "creator_email": "22@44.com",
-    "creator_department": "xx",
-    "description": ""
-}</code></pre>
-
-
-
-        <hr>
-
-
-        <h1 id="1803635171848">创建用户上线申请</h1>
-
-          <div class="endpoint post">/api/tickets/consumer_launch_apply/</div>
-
-
-
-
-
-            <table>
-              <thead>
-                <tr>
-                    <th>Body 参数</th>
-                    <th>类型</th>
-                    <th>描述</th>
-                    <th>必须</th>
-                    <th>默认值</th>
-                    <th>示例</th>
-                </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                    <td><code>title</code></td>
-                    <td><em>string</em></td>
-                    <td>工单任务主题</td>
-                    <td><?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Creator: CorelDRAW X6 -->
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-viewBox="0 0 500 500"
- xmlns:xlink="http://www.w3.org/1999/xlink">
- <defs>
-  <style type="text/css">
-   <![CDATA[
-    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
-    .str1 {stroke:#6FAE00;stroke-width:30}
-    .fil0 {fill:none}
-   ]]>
-  </style>
- </defs>
- <g id="Layer_x0020_1">
-  <metadata id="CorelCorpID_0Corel-Layer"/>
-  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
-  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
- </g>
-</svg>
-</td>
-                    <td><class 'rest_framework.fields.empty'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>applicant</code></td>
-                    <td><em>string</em></td>
-                    <td>工单申请人 [可以代别人申请]</td>
-                    <td></td>
-                    <td><class 'rest_framework.fields.empty'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>applicant_department</code></td>
-                    <td><em>string</em></td>
-                    <td>工单申请人部门</td>
-                    <td></td>
-                    <td><class 'rest_framework.fields.empty'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>applicant_job</code></td>
-                    <td><em>string</em></td>
-                    <td>工单申请人职位</td>
-                    <td></td>
-                    <td><class 'rest_framework.fields.empty'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>username</code></td>
-                    <td><em>string</em></td>
-                    <td>用户账号 [唯一标识对该用户授权访问的一个访问通道编码。编码规则：机构中文全拼缩写（小写 ）+ 4位16进制随机编码，由业务输入系统 （系统应具备验证用户名唯一性功能）。用户账号由业务生成，生成的过程中，能够校验账号的唯一性]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>oa_number</code></td>
-                    <td><em>string</em></td>
-                    <td>协议OA审批编号 [用户申请使用生产系统的产品，需要先签订合同，并OA审批通过]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>category</code></td>
-                    <td><em>int</em></td>
-                    <td>用户类型 [1 内部用户； 2 外部用户]</td>
-                    <td></td>
-                    <td>0</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>org_name_zh</code></td>
-                    <td><em>string</em></td>
-                    <td>机构中文名称 [可以为空，但是中英文单位名称必须填一个]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>org_name_en</code></td>
-                    <td><em>string</em></td>
-                    <td>机构英文名称 [可以为空，但是中英文单位名称必须填一个]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>org_number</code></td>
-                    <td><em>string</em></td>
-                    <td>社会统一信用代码/组织机构代码 [用于客户业务校核，客户的中英文名称应该与社会统一信用代码一致]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>org_address</code></td>
-                    <td><em>string</em></td>
-                    <td>机构地址 [可以为空]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>user_department</code></td>
-                    <td><em>string</em></td>
-                    <td>用户部门 [主要是配置必要的辅助信息，用于对账，内部用户必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>user_project</code></td>
-                    <td><em>string</em></td>
-                    <td>用户项目 [内部用户必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>user_product</code></td>
-                    <td><em>string</em></td>
-                    <td>用户产品 [内部用户必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>server_ips</code></td>
-                    <td><em>string</em></td>
-                    <td>服务器IP [用于配置白名单，多个IP以逗号分隔]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>contact_person</code></td>
-                    <td><em>string</em></td>
-                    <td>联系人 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>contact_mobile</code></td>
-                    <td><em>string</em></td>
-                    <td>联系人手机号码 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>contact_email</code></td>
-                    <td><em>string</em></td>
-                    <td>联系人邮箱 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>related_products</code></td>
-                    <td><em>string</em></td>
-                    <td>用户关联产品 [多个产品以逗号分隔]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>creator</code></td>
-                    <td><em>string</em></td>
-                    <td>创建人 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>creator_mobile</code></td>
-                    <td><em>string</em></td>
-                    <td>创建人手机号码 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>creator_email</code></td>
-                    <td><em>string</em></td>
-                    <td>创建人邮箱 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>creator_department</code></td>
-                    <td><em>string</em></td>
-                    <td>创建人部门 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>description</code></td>
-                    <td><em>string</em></td>
-                    <td>描述 [可以描述附加的客户需求]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-              </tbody>
-            </table>
-
-              <p>
-                Content-Types:
-                  <code>application/json</code>
-                  <code>application/x-www-form-urlencoded</code>
-                  <code>multipart/form-data</code>
-              </p>
-
-
-
-
-            <p>
-                示例返回结果:
-            </p>
-            <pre><code class="lang-json">{
-    "id": 1,
-    "ticket": {
-        "id": 2,
-        "flows": [],
-        "apply_uri": "/api/tickets/consumer_launch_apply/1/",
-        "number": "36d5a24b60d947c38e0e23aa2c1424a4",
-        "relate_code": "ConsumerLaunchApply_1",
-        "title": "test2",
-        "applicant": "申请人1",
-        "applicant_department": "xx",
-        "applicant_job": "xx",
-        "status": "未提交",
-        "created_at": "2020-03-02T16:19:18.428339+08:00"
-    },
-    "username": "ss2",
-    "oa_number": "xx2",
-    "category": 2,
-    "org_name_zh": "测测次",
-    "org_name_en": "xx",
-    "org_number": "1234567890987654",
-    "org_address": "222",
-    "user_department": "testdepartment",
-    "user_project": "testproj",
-    "user_product": "testprod",
-    "server_ips": "",
-    "contact_person": "",
-    "contact_mobile": "",
-    "contact_email": "",
+    "user_project": "",
+    "user_product": "",
+    "test_count": 100,
     "related_products": "",
-    "creator": "",
-    "creator_mobile": "",
-    "creator_email": "",
-    "creator_department": "",
     "description": ""
 }</code></pre>
 
@@ -928,106 +1589,7 @@ viewBox="0 0 500 500"
         <hr>
 
 
-        <h1 id="1803636103544">用户上线申请详情</h1>
-
-          <div class="endpoint get">/api/tickets/consumer_launch_apply/&lt;id&gt;/</div>
-
-
-
-            <table>
-              <thead>
-                <tr>
-                    <th>Uri 参数</th>
-                    <th>类型</th>
-                    <th>描述</th>
-                    <th>必须</th>
-                    <th>默认值</th>
-                    <th>示例</th>
-                </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                    <td><code>id</code></td>
-                    <td><em>string</em></td>
-                    <td>用户上线申请 ID</td>
-                    <td><?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Creator: CorelDRAW X6 -->
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-viewBox="0 0 500 500"
- xmlns:xlink="http://www.w3.org/1999/xlink">
- <defs>
-  <style type="text/css">
-   <![CDATA[
-    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
-    .str1 {stroke:#6FAE00;stroke-width:30}
-    .fil0 {fill:none}
-   ]]>
-  </style>
- </defs>
- <g id="Layer_x0020_1">
-  <metadata id="CorelCorpID_0Corel-Layer"/>
-  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
-  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
- </g>
-</svg>
-</td>
-                    <td></td>
-                    <td>1</td>
-                  </tr>
-              </tbody>
-            </table>
-
-
-
-
-
-            <p>
-                示例返回结果:
-            </p>
-            <pre><code class="lang-json">{
-    "id": 1,
-    "ticket": {
-        "id": 2,
-        "flows": [],
-        "apply_uri": "/api/tickets/consumer_launch_apply/1/",
-        "number": "36d5a24b60d947c38e0e23aa2c1424a4",
-        "relate_code": "ConsumerLaunchApply_1",
-        "title": "test2",
-        "applicant": "申请人1",
-        "applicant_department": "xx",
-        "applicant_job": "xx",
-        "status": "未提交",
-        "created_at": "2020-03-02T16:19:18.428339+08:00"
-    },
-    "username": "ss2",
-    "oa_number": "xx2",
-    "category": 2,
-    "org_name_zh": "测测次",
-    "org_name_en": "xx",
-    "org_number": "1234567890987654",
-    "org_address": "222",
-    "user_department": "testdepartment",
-    "user_project": "testproj",
-    "user_product": "testprod",
-    "server_ips": "",
-    "contact_person": "",
-    "contact_mobile": "",
-    "contact_email": "",
-    "related_products": "",
-    "creator": "",
-    "creator_mobile": "",
-    "creator_email": "",
-    "creator_department": "",
-    "description": ""
-}</code></pre>
-
-
-
-        <hr>
-
-
-        <h1 id="1803635174760">创建第三方供应商注册申请</h1>
+        <h1 id="1929903201136">创建第三方供应商注册申请</h1>
 
           <div class="endpoint post">/api/tickets/vendor_apply/</div>
 
@@ -1077,26 +1639,60 @@ viewBox="0 0 500 500"
                     <td></td>
                   </tr>
                   <tr>
-                    <td><code>applicant</code></td>
+                    <td><code>applicant_username</code></td>
                     <td><em>string</em></td>
-                    <td>工单申请人 [可以代别人申请]</td>
-                    <td></td>
+                    <td>工单申请人 [一般是自己]</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
                     <td><class 'rest_framework.fields.empty'></td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td><code>applicant_department</code></td>
+                    <td><code>maintainer_username</code></td>
                     <td><em>string</em></td>
-                    <td>工单申请人部门</td>
-                    <td></td>
-                    <td><class 'rest_framework.fields.empty'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>applicant_job</code></td>
-                    <td><em>string</em></td>
-                    <td>工单申请人职位</td>
-                    <td></td>
+                    <td>关系维护人 [可以填其他人]</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
                     <td><class 'rest_framework.fields.empty'></td>
                     <td></td>
                   </tr>
@@ -1189,41 +1785,9 @@ viewBox="0 0 500 500"
                     <td></td>
                   </tr>
                   <tr>
-                    <td><code>creator</code></td>
-                    <td><em>string</em></td>
-                    <td>创建人 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>creator_mobile</code></td>
-                    <td><em>string</em></td>
-                    <td>创建人手机号码 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>creator_email</code></td>
-                    <td><em>string</em></td>
-                    <td>创建人邮箱 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>creator_department</code></td>
-                    <td><em>string</em></td>
-                    <td>创建人部门 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
                     <td><code>description</code></td>
                     <td><em>string</em></td>
-                    <td>描述 [可以描述附加的客户需求]</td>
+                    <td>描述 [可以描述附加的需求]</td>
                     <td></td>
                     <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
                     <td></td>
@@ -1247,33 +1811,64 @@ viewBox="0 0 500 500"
             <pre><code class="lang-json">{
     "id": 1,
     "ticket": {
-        "id": 3,
+        "id": 4,
         "flows": [],
+        "attachments": [],
         "apply_uri": "/api/tickets/vendor_apply/1/",
-        "number": "39f6708185bb43ed94a175e362255b49",
+        "applicant": {
+            "id": 2,
+            "username": "test2",
+            "email": "test2@123.com",
+            "full_name": "李四",
+            "mobile": "13212345678",
+            "department": "DDC",
+            "job": "产品经理",
+            "leader": {
+                "id": 1,
+                "username": "test",
+                "email": "test@123.com",
+                "full_name": "张三",
+                "mobile": "13412345678",
+                "department": "DDC",
+                "job": "产品总监"
+            }
+        },
+        "maintainer": {
+            "id": 2,
+            "username": "test2",
+            "email": "test2@123.com",
+            "full_name": "李四",
+            "mobile": "13212345678",
+            "department": "DDC",
+            "job": "产品经理",
+            "leader": {
+                "id": 1,
+                "username": "test",
+                "email": "test@123.com",
+                "full_name": "张三",
+                "mobile": "13412345678",
+                "department": "DDC",
+                "job": "产品总监"
+            }
+        },
+        "number": "6d4d5ef94f354c06b3eaa6d0c6cfbb40",
         "relate_code": "VendorApply_1",
-        "title": "测试工单主题222",
-        "applicant": "张三",
-        "applicant_department": "xx",
-        "applicant_job": "xxx",
-        "status": "未提交",
-        "created_at": "2020-03-02T16:20:20.485373+08:00"
+        "title": "工单主题15435",
+        "status": "审批中",
+        "created_at": "2020-03-03T18:27:46.185838+08:00",
+        "creator": null
     },
-    "org_code": "xxx",
+    "org_code": "test1123",
     "org_name_zh": "测测次",
     "org_number": "1234567890987654",
-    "contact_person": "张三",
-    "contact_mobile": "13402110752",
-    "contact_email": "ta@admin.com",
-    "org_address": "xxxx",
-    "score": 2,
-    "risk": 1,
+    "contact_person": "",
+    "contact_mobile": "",
+    "contact_email": "",
+    "org_address": "",
+    "score": 0,
+    "risk": 0,
     "communication": "",
-    "industry": "xxx",
-    "creator": "ff",
-    "creator_mobile": "13402110752",
-    "creator_email": "22@44.com",
-    "creator_department": "xx",
+    "industry": "",
     "description": ""
 }</code></pre>
 
@@ -1282,7 +1877,7 @@ viewBox="0 0 500 500"
         <hr>
 
 
-        <h1 id="1803636358000">第三方供应商注册申请详情</h1>
+        <h1 id="1929903547224">第三方供应商注册申请详情</h1>
 
           <div class="endpoint get">/api/tickets/vendor_apply/&lt;id&gt;/</div>
 
@@ -1342,33 +1937,64 @@ viewBox="0 0 500 500"
             <pre><code class="lang-json">{
     "id": 1,
     "ticket": {
-        "id": 3,
+        "id": 4,
         "flows": [],
+        "attachments": [],
         "apply_uri": "/api/tickets/vendor_apply/1/",
-        "number": "39f6708185bb43ed94a175e362255b49",
+        "applicant": {
+            "id": 2,
+            "username": "test2",
+            "email": "test2@123.com",
+            "full_name": "李四",
+            "mobile": "13212345678",
+            "department": "DDC",
+            "job": "产品经理",
+            "leader": {
+                "id": 1,
+                "username": "test",
+                "email": "test@123.com",
+                "full_name": "张三",
+                "mobile": "13412345678",
+                "department": "DDC",
+                "job": "产品总监"
+            }
+        },
+        "maintainer": {
+            "id": 2,
+            "username": "test2",
+            "email": "test2@123.com",
+            "full_name": "李四",
+            "mobile": "13212345678",
+            "department": "DDC",
+            "job": "产品经理",
+            "leader": {
+                "id": 1,
+                "username": "test",
+                "email": "test@123.com",
+                "full_name": "张三",
+                "mobile": "13412345678",
+                "department": "DDC",
+                "job": "产品总监"
+            }
+        },
+        "number": "6d4d5ef94f354c06b3eaa6d0c6cfbb40",
         "relate_code": "VendorApply_1",
-        "title": "测试工单主题222",
-        "applicant": "张三",
-        "applicant_department": "xx",
-        "applicant_job": "xxx",
-        "status": "未提交",
-        "created_at": "2020-03-02T16:20:20.485373+08:00"
+        "title": "工单主题15435",
+        "status": "审批中",
+        "created_at": "2020-03-03T18:27:46.185838+08:00",
+        "creator": null
     },
-    "org_code": "xxx",
+    "org_code": "test1123",
     "org_name_zh": "测测次",
     "org_number": "1234567890987654",
-    "contact_person": "张三",
-    "contact_mobile": "13402110752",
-    "contact_email": "ta@admin.com",
-    "org_address": "xxxx",
-    "score": 2,
-    "risk": 1,
+    "contact_person": "",
+    "contact_mobile": "",
+    "contact_email": "",
+    "org_address": "",
+    "score": 0,
+    "risk": 0,
     "communication": "",
-    "industry": "xxx",
-    "creator": "ff",
-    "creator_mobile": "13402110752",
-    "creator_email": "22@44.com",
-    "creator_department": "xx",
+    "industry": "",
     "description": ""
 }</code></pre>
 
@@ -1377,7 +2003,7 @@ viewBox="0 0 500 500"
         <hr>
 
 
-        <h1 id="1803636358336">创建第三方API接入申请</h1>
+        <h1 id="1929903200128">创建第三方API接入申请</h1>
 
           <div class="endpoint post">/api/tickets/vendor_api_apply/</div>
 
@@ -1427,26 +2053,60 @@ viewBox="0 0 500 500"
                     <td></td>
                   </tr>
                   <tr>
-                    <td><code>applicant</code></td>
+                    <td><code>applicant_username</code></td>
                     <td><em>string</em></td>
-                    <td>工单申请人 [可以代别人申请]</td>
-                    <td></td>
+                    <td>工单申请人 [一般是自己]</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
                     <td><class 'rest_framework.fields.empty'></td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td><code>applicant_department</code></td>
+                    <td><code>maintainer_username</code></td>
                     <td><em>string</em></td>
-                    <td>工单申请人部门</td>
-                    <td></td>
-                    <td><class 'rest_framework.fields.empty'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>applicant_job</code></td>
-                    <td><em>string</em></td>
-                    <td>工单申请人职位</td>
-                    <td></td>
+                    <td>关系维护人 [可以填其他人]</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
                     <td><class 'rest_framework.fields.empty'></td>
                     <td></td>
                   </tr>
@@ -1493,7 +2153,7 @@ viewBox="0 0 500 500"
                   <tr>
                     <td><code>params_in</code></td>
                     <td><em>string</em></td>
-                    <td>入参 [必填]</td>
+                    <td>入参 [必填，json 结构体]</td>
                     <td></td>
                     <td>{}</td>
                     <td></td>
@@ -1501,17 +2161,17 @@ viewBox="0 0 500 500"
                   <tr>
                     <td><code>params_in_sensitive</code></td>
                     <td><em>string</em></td>
-                    <td>入参敏感字段 [必填]</td>
+                    <td>入参敏感字段 [必填，多个字段用逗号分隔]</td>
                     <td></td>
-                    <td>{}</td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
                     <td></td>
                   </tr>
                   <tr>
                     <td><code>params_out_sensitive</code></td>
                     <td><em>string</em></td>
-                    <td>出参敏感字段 [必填]</td>
+                    <td>出参敏感字段 [必填，多个字段用逗号分隔]</td>
                     <td></td>
-                    <td>{}</td>
+                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
                     <td></td>
                   </tr>
                   <tr>
@@ -1595,38 +2255,6 @@ viewBox="0 0 500 500"
                     <td></td>
                   </tr>
                   <tr>
-                    <td><code>creator</code></td>
-                    <td><em>string</em></td>
-                    <td>创建人 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>creator_mobile</code></td>
-                    <td><em>string</em></td>
-                    <td>创建人手机号码 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>creator_email</code></td>
-                    <td><em>string</em></td>
-                    <td>创建人邮箱 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>creator_department</code></td>
-                    <td><em>string</em></td>
-                    <td>创建人部门 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
                     <td><code>remark</code></td>
                     <td><em>string</em></td>
                     <td>备注 [可以为空，补充信息]</td>
@@ -1653,40 +2281,63 @@ viewBox="0 0 500 500"
             <pre><code class="lang-json">{
     "id": 1,
     "ticket": {
-        "id": 4,
+        "id": 5,
         "flows": [],
+        "attachments": [],
         "apply_uri": "/api/tickets/vendor_api_apply/1/",
-        "number": "c2a0de30ad1e4124aefd4a9598c336fb",
+        "applicant": {
+            "id": 2,
+            "username": "test2",
+            "email": "test2@123.com",
+            "full_name": "李四",
+            "mobile": "13212345678",
+            "department": "DDC",
+            "job": "产品经理",
+            "leader": {
+                "id": 1,
+                "username": "test",
+                "email": "test@123.com",
+                "full_name": "张三",
+                "mobile": "13412345678",
+                "department": "DDC",
+                "job": "产品总监"
+            }
+        },
+        "maintainer": {
+            "id": 1,
+            "username": "test",
+            "email": "test@123.com",
+            "full_name": "张三",
+            "mobile": "13412345678",
+            "department": "DDC",
+            "job": "产品总监",
+            "leader": null
+        },
+        "number": "19352f796e734872881c3214bef8dcf4",
         "relate_code": "VendorApiApply_1",
-        "title": "工单主题1222",
-        "applicant": "张三",
-        "applicant_department": "xx",
-        "applicant_job": "xx",
-        "status": "未提交",
-        "created_at": "2020-03-02T16:21:43.763086+08:00"
+        "title": "工单主题17753",
+        "status": "审批中",
+        "created_at": "2020-03-03T18:28:33.315596+08:00",
+        "creator": null
     },
-    "org_code": "88229344",
-    "product_name": "xfafsf",
-    "api_code": "s33fffss",
-    "product_description": "ffxxxx",
-    "api_url": "https://xxx.com/api/shopex/webhooks/",
-    "params_in": "{}",
-    "params_in_sensitive": "{}",
-    "params_out_sensitive": "{}",
-    "use_cache": true,
-    "cache_ms": 22,
-    "timeout_ms": 11,
-    "field": "xxx",
-    "alarm_total_count": 22,
-    "alarm_fail_count": 21,
-    "alarm_timeout_count": 12,
+    "org_code": "test",
+    "product_name": "产品1211",
+    "api_code": "22ffa",
+    "product_description": "",
+    "api_url": "",
+    "params_in": "{“name”: \"姓名\"}",
+    "params_in_sensitive": "",
+    "params_out_sensitive": "",
+    "use_cache": false,
+    "cache_ms": 0,
+    "timeout_ms": 0,
+    "field": "",
+    "alarm_total_count": 0,
+    "alarm_fail_count": 0,
+    "alarm_timeout_count": 0,
     "start": "",
     "send": "",
     "version": "",
-    "creator": "",
-    "creator_mobile": "13402110752",
-    "creator_email": "",
-    "creator_department": "",
     "remark": ""
 }</code></pre>
 
@@ -1695,7 +2346,7 @@ viewBox="0 0 500 500"
         <hr>
 
 
-        <h1 id="1803635739000">第三方API接入申请详情</h1>
+        <h1 id="1929903274192">第三方API接入申请详情</h1>
 
           <div class="endpoint get">/api/tickets/vendor_api_apply/&lt;id&gt;/</div>
 
@@ -1755,40 +2406,63 @@ viewBox="0 0 500 500"
             <pre><code class="lang-json">{
     "id": 1,
     "ticket": {
-        "id": 4,
+        "id": 5,
         "flows": [],
+        "attachments": [],
         "apply_uri": "/api/tickets/vendor_api_apply/1/",
-        "number": "c2a0de30ad1e4124aefd4a9598c336fb",
+        "applicant": {
+            "id": 2,
+            "username": "test2",
+            "email": "test2@123.com",
+            "full_name": "李四",
+            "mobile": "13212345678",
+            "department": "DDC",
+            "job": "产品经理",
+            "leader": {
+                "id": 1,
+                "username": "test",
+                "email": "test@123.com",
+                "full_name": "张三",
+                "mobile": "13412345678",
+                "department": "DDC",
+                "job": "产品总监"
+            }
+        },
+        "maintainer": {
+            "id": 1,
+            "username": "test",
+            "email": "test@123.com",
+            "full_name": "张三",
+            "mobile": "13412345678",
+            "department": "DDC",
+            "job": "产品总监",
+            "leader": null
+        },
+        "number": "19352f796e734872881c3214bef8dcf4",
         "relate_code": "VendorApiApply_1",
-        "title": "工单主题1222",
-        "applicant": "张三",
-        "applicant_department": "xx",
-        "applicant_job": "xx",
-        "status": "未提交",
-        "created_at": "2020-03-02T16:21:43.763086+08:00"
+        "title": "工单主题17753",
+        "status": "审批中",
+        "created_at": "2020-03-03T18:28:33.315596+08:00",
+        "creator": null
     },
-    "org_code": "88229344",
-    "product_name": "xfafsf",
-    "api_code": "s33fffss",
-    "product_description": "ffxxxx",
-    "api_url": "https://xxx.com/api/shopex/webhooks/",
-    "params_in": "{}",
-    "params_in_sensitive": "{}",
-    "params_out_sensitive": "{}",
-    "use_cache": true,
-    "cache_ms": 22,
-    "timeout_ms": 11,
-    "field": "xxx",
-    "alarm_total_count": 22,
-    "alarm_fail_count": 21,
-    "alarm_timeout_count": 12,
+    "org_code": "test",
+    "product_name": "产品1211",
+    "api_code": "22ffa",
+    "product_description": "",
+    "api_url": "",
+    "params_in": "{“name”: \"姓名\"}",
+    "params_in_sensitive": "",
+    "params_out_sensitive": "",
+    "use_cache": false,
+    "cache_ms": 0,
+    "timeout_ms": 0,
+    "field": "",
+    "alarm_total_count": 0,
+    "alarm_fail_count": 0,
+    "alarm_timeout_count": 0,
     "start": "",
     "send": "",
     "version": "",
-    "creator": "",
-    "creator_mobile": "13402110752",
-    "creator_email": "",
-    "creator_department": "",
     "remark": ""
 }</code></pre>
 
@@ -1797,7 +2471,7 @@ viewBox="0 0 500 500"
         <hr>
 
 
-        <h1 id="1803636101416">创建产品上线申请</h1>
+        <h1 id="1929903547448">创建产品上线申请</h1>
 
           <div class="endpoint post">/api/tickets/product_launch_apply/</div>
 
@@ -1847,26 +2521,60 @@ viewBox="0 0 500 500"
                     <td></td>
                   </tr>
                   <tr>
-                    <td><code>applicant</code></td>
+                    <td><code>applicant_username</code></td>
                     <td><em>string</em></td>
-                    <td>工单申请人 [可以代别人申请]</td>
-                    <td></td>
+                    <td>工单申请人 [一般是自己]</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
                     <td><class 'rest_framework.fields.empty'></td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td><code>applicant_department</code></td>
+                    <td><code>maintainer_username</code></td>
                     <td><em>string</em></td>
-                    <td>工单申请人部门</td>
-                    <td></td>
-                    <td><class 'rest_framework.fields.empty'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>applicant_job</code></td>
-                    <td><em>string</em></td>
-                    <td>工单申请人职位</td>
-                    <td></td>
+                    <td>关系维护人 [可以填其他人]</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
                     <td><class 'rest_framework.fields.empty'></td>
                     <td></td>
                   </tr>
@@ -1991,38 +2699,6 @@ viewBox="0 0 500 500"
                     <td></td>
                   </tr>
                   <tr>
-                    <td><code>creator</code></td>
-                    <td><em>string</em></td>
-                    <td>创建人 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>creator_mobile</code></td>
-                    <td><em>string</em></td>
-                    <td>创建人手机号码 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>creator_email</code></td>
-                    <td><em>string</em></td>
-                    <td>创建人邮箱 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>creator_department</code></td>
-                    <td><em>string</em></td>
-                    <td>创建人部门 [必填]</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
                     <td><code>remark</code></td>
                     <td><em>string</em></td>
                     <td>备注 [可以为空，补充信息]</td>
@@ -2049,37 +2725,52 @@ viewBox="0 0 500 500"
             <pre><code class="lang-json">{
     "id": 1,
     "ticket": {
-        "id": 5,
+        "id": 6,
         "flows": [],
+        "attachments": [],
         "apply_uri": "/api/tickets/product_launch_apply/1/",
-        "number": "507b7de14aa3467da092eead355e1d66",
+        "applicant": {
+            "id": 3,
+            "username": "test3",
+            "email": "test3@123.com",
+            "full_name": "王五",
+            "mobile": "13312345678",
+            "department": "ITC",
+            "job": "开发总监",
+            "leader": null
+        },
+        "maintainer": {
+            "id": 3,
+            "username": "test3",
+            "email": "test3@123.com",
+            "full_name": "王五",
+            "mobile": "13312345678",
+            "department": "ITC",
+            "job": "开发总监",
+            "leader": null
+        },
+        "number": "ae11dad116a940138f36dcade5cf5c6b",
         "relate_code": "ProductLaunchApply_1",
-        "title": "工单主题1233",
-        "applicant": "张三",
-        "applicant_department": "xx",
-        "applicant_job": "xx",
-        "status": "未提交",
-        "created_at": "2020-03-02T16:22:48.458149+08:00"
+        "title": "工单主题15335",
+        "status": "审批中",
+        "created_at": "2020-03-03T18:29:13.125029+08:00",
+        "creator": null
     },
-    "product_number": "test222332",
-    "product_name": "xfafsf",
-    "source_numbers": "fasdf",
+    "product_number": "test222",
+    "product_name": "产品1211",
+    "source_numbers": "safas",
     "manager_name": "张三",
-    "manager_mobile": "13402110752",
+    "manager_mobile": "13322211223",
     "manager_email": "tss@tq.com",
     "use_cache": true,
-    "cache_ms": 2,
-    "timeout_ms": 1,
-    "alarm_total_count": 2,
-    "alarm_fail_count": 11,
-    "alarm_timeout_count": 22,
-    "params_in": "{}",
-    "params_in_sensitive": "{}",
-    "params_out_sensitive": "{}",
-    "creator": "",
-    "creator_mobile": "13402110752",
-    "creator_email": "22@44.com",
-    "creator_department": "",
+    "cache_ms": 1,
+    "timeout_ms": 2,
+    "alarm_total_count": 3,
+    "alarm_fail_count": 4,
+    "alarm_timeout_count": 5,
+    "params_in": "",
+    "params_in_sensitive": "",
+    "params_out_sensitive": "",
     "remark": ""
 }</code></pre>
 
@@ -2088,7 +2779,7 @@ viewBox="0 0 500 500"
         <hr>
 
 
-        <h1 id="1803635786080">产品上线申请详情</h1>
+        <h1 id="1929903016648">产品上线申请详情</h1>
 
           <div class="endpoint get">/api/tickets/product_launch_apply/&lt;id&gt;/</div>
 
@@ -2148,37 +2839,52 @@ viewBox="0 0 500 500"
             <pre><code class="lang-json">{
     "id": 1,
     "ticket": {
-        "id": 5,
+        "id": 6,
         "flows": [],
+        "attachments": [],
         "apply_uri": "/api/tickets/product_launch_apply/1/",
-        "number": "507b7de14aa3467da092eead355e1d66",
+        "applicant": {
+            "id": 3,
+            "username": "test3",
+            "email": "test3@123.com",
+            "full_name": "王五",
+            "mobile": "13312345678",
+            "department": "ITC",
+            "job": "开发总监",
+            "leader": null
+        },
+        "maintainer": {
+            "id": 3,
+            "username": "test3",
+            "email": "test3@123.com",
+            "full_name": "王五",
+            "mobile": "13312345678",
+            "department": "ITC",
+            "job": "开发总监",
+            "leader": null
+        },
+        "number": "ae11dad116a940138f36dcade5cf5c6b",
         "relate_code": "ProductLaunchApply_1",
-        "title": "工单主题1233",
-        "applicant": "张三",
-        "applicant_department": "xx",
-        "applicant_job": "xx",
-        "status": "未提交",
-        "created_at": "2020-03-02T16:22:48.458149+08:00"
+        "title": "工单主题15335",
+        "status": "审批中",
+        "created_at": "2020-03-03T18:29:13.125029+08:00",
+        "creator": null
     },
-    "product_number": "test222332",
-    "product_name": "xfafsf",
-    "source_numbers": "fasdf",
+    "product_number": "test222",
+    "product_name": "产品1211",
+    "source_numbers": "safas",
     "manager_name": "张三",
-    "manager_mobile": "13402110752",
+    "manager_mobile": "13322211223",
     "manager_email": "tss@tq.com",
     "use_cache": true,
-    "cache_ms": 2,
-    "timeout_ms": 1,
-    "alarm_total_count": 2,
-    "alarm_fail_count": 11,
-    "alarm_timeout_count": 22,
-    "params_in": "{}",
-    "params_in_sensitive": "{}",
-    "params_out_sensitive": "{}",
-    "creator": "",
-    "creator_mobile": "13402110752",
-    "creator_email": "22@44.com",
-    "creator_department": "",
+    "cache_ms": 1,
+    "timeout_ms": 2,
+    "alarm_total_count": 3,
+    "alarm_fail_count": 4,
+    "alarm_timeout_count": 5,
+    "params_in": "",
+    "params_in_sensitive": "",
+    "params_out_sensitive": "",
     "remark": ""
 }</code></pre>
 
@@ -2187,7 +2893,7 @@ viewBox="0 0 500 500"
         <hr>
 
 
-        <h1 id="1803631768576">工单列表</h1>
+        <h1 id="1929903372272">工单列表</h1>
 
           <div class="endpoint get">/api/tickets/ticket/</div>
 
@@ -2207,6 +2913,14 @@ viewBox="0 0 500 500"
               </thead>
               <tbody>
                   <tr>
+                    <td><code>number</code></td>
+                    <td><em>string</em></td>
+                    <td>指定工单号</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
                     <td><code>title__icontains</code></td>
                     <td><em>string</em></td>
                     <td>匹配任务主题</td>
@@ -2215,25 +2929,9 @@ viewBox="0 0 500 500"
                     <td></td>
                   </tr>
                   <tr>
-                    <td><code>applicant</code></td>
+                    <td><code>status</code></td>
                     <td><em>string</em></td>
-                    <td>指定申请人姓名</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>applicant_department</code></td>
-                    <td><em>string</em></td>
-                    <td>指定申请人部门</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>applicant_job</code></td>
-                    <td><em>string</em></td>
-                    <td>指定申请人职位</td>
+                    <td>指定工单状态</td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -2248,41 +2946,57 @@ viewBox="0 0 500 500"
                 示例返回结果:
             </p>
             <pre><code class="lang-json">{
-    "count": 5,
+    "count": 6,
     "next": null,
     "previous": null,
     "results": [
         {
             "id": 1,
-            "flows": [
-                {
+            "flows": [],
+            "attachments": [],
+            "apply_uri": "/api/tickets/consumer_register_apply/1/",
+            "applicant": {
+                "id": 2,
+                "username": "test2",
+                "email": "test2@123.com",
+                "full_name": "李四",
+                "mobile": "13212345678",
+                "department": "DDC",
+                "job": "产品经理",
+                "leader": {
                     "id": 1,
-                    "sequence": 1,
-                    "handler_name": "test",
-                    "result": "",
-                    "content": "",
-                    "updated_at": "2020-03-02T16:17:59.090975+08:00",
-                    "ticket": 1
-                },
-                {
-                    "id": 2,
-                    "sequence": 2,
-                    "handler_name": "test2",
-                    "result": "",
-                    "content": "",
-                    "updated_at": "2020-03-02T16:17:59.096972+08:00",
-                    "ticket": 1
+                    "username": "test",
+                    "email": "test@123.com",
+                    "full_name": "张三",
+                    "mobile": "13412345678",
+                    "department": "DDC",
+                    "job": "产品总监"
                 }
-            ],
-            "apply_uri": "/api/tickets/consumer_trial_apply/1/",
-            "number": "f1b2d9c8e9d042b9828fa811aac2352d",
-            "relate_code": "ConsumerTrialApply_1",
-            "title": "测试工单主题",
-            "applicant": "张三",
-            "applicant_department": "DDC",
-            "applicant_job": "项目经理",
-            "status": "未提交",
-            "created_at": "2020-03-02T16:17:59.084974+08:00"
+            },
+            "maintainer": {
+                "id": 2,
+                "username": "test2",
+                "email": "test2@123.com",
+                "full_name": "李四",
+                "mobile": "13212345678",
+                "department": "DDC",
+                "job": "产品经理",
+                "leader": {
+                    "id": 1,
+                    "username": "test",
+                    "email": "test@123.com",
+                    "full_name": "张三",
+                    "mobile": "13412345678",
+                    "department": "DDC",
+                    "job": "产品总监"
+                }
+            },
+            "number": "4368ca4594044a2f9e2978c28621772b",
+            "relate_code": "ConsumerRegisterApply_1",
+            "title": "工单主题12",
+            "status": "审批中",
+            "created_at": "2020-03-03T18:21:02.337776+08:00",
+            "creator": null
         }
     ]
 }</code></pre>
@@ -2292,18 +3006,16 @@ viewBox="0 0 500 500"
         <hr>
 
 
-        <h1 id="1803635739672">创建工单</h1>
+        <h1 id="1929902934616">工单详情</h1>
 
-          <div class="endpoint post">/api/tickets/ticket/</div>
-
-
+          <div class="endpoint get">/api/tickets/ticket/&lt;id&gt;/</div>
 
 
 
             <table>
               <thead>
                 <tr>
-                    <th>Body 参数</th>
+                    <th>Uri 参数</th>
                     <th>类型</th>
                     <th>描述</th>
                     <th>必须</th>
@@ -2313,54 +3025,37 @@ viewBox="0 0 500 500"
               </thead>
               <tbody>
                   <tr>
-                    <td><code>number</code></td>
+                    <td><code>id</code></td>
                     <td><em>string</em></td>
-                    <td>工单号 [唯一标识]</td>
+                    <td>工单 ID</td>
+                    <td><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15" height="15" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#4D7800;stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#6FAE00;stroke-width:30}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polyline class="fil0 str0" points="130,238 218,326 370,174 "/>
+  <circle class="fil0 str1" cx="250" cy="250" r="195"/>
+ </g>
+</svg>
+</td>
                     <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>title</code></td>
-                    <td><em>string</em></td>
-                    <td>任务主题</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>applicant</code></td>
-                    <td><em>string</em></td>
-                    <td>申请人姓名</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>applicant_department</code></td>
-                    <td><em>string</em></td>
-                    <td>申请人部门</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><code>applicant_job</code></td>
-                    <td><em>string</em></td>
-                    <td>申请人职位</td>
-                    <td></td>
-                    <td><class 'django.db.models.fields.NOT_PROVIDED'></td>
-                    <td></td>
+                    <td>1</td>
                   </tr>
               </tbody>
             </table>
 
-              <p>
-                Content-Types:
-                  <code>application/json</code>
-                  <code>application/x-www-form-urlencoded</code>
-                  <code>multipart/form-data</code>
-              </p>
 
 
 
@@ -2370,35 +3065,51 @@ viewBox="0 0 500 500"
             </p>
             <pre><code class="lang-json">{
     "id": 1,
-    "flows": [
-        {
+    "flows": [],
+    "attachments": [],
+    "apply_uri": "/api/tickets/consumer_register_apply/1/",
+    "applicant": {
+        "id": 2,
+        "username": "test2",
+        "email": "test2@123.com",
+        "full_name": "李四",
+        "mobile": "13212345678",
+        "department": "DDC",
+        "job": "产品经理",
+        "leader": {
             "id": 1,
-            "sequence": 1,
-            "handler_name": "test",
-            "result": "",
-            "content": "",
-            "updated_at": "2020-03-02T16:17:59.090975+08:00",
-            "ticket": 1
-        },
-        {
-            "id": 2,
-            "sequence": 2,
-            "handler_name": "test2",
-            "result": "",
-            "content": "",
-            "updated_at": "2020-03-02T16:17:59.096972+08:00",
-            "ticket": 1
+            "username": "test",
+            "email": "test@123.com",
+            "full_name": "张三",
+            "mobile": "13412345678",
+            "department": "DDC",
+            "job": "产品总监"
         }
-    ],
-    "apply_uri": "/api/tickets/consumer_trial_apply/1/",
-    "number": "f1b2d9c8e9d042b9828fa811aac2352d",
-    "relate_code": "ConsumerTrialApply_1",
-    "title": "测试工单主题",
-    "applicant": "张三",
-    "applicant_department": "DDC",
-    "applicant_job": "项目经理",
-    "status": "未提交",
-    "created_at": "2020-03-02T16:17:59.084974+08:00"
+    },
+    "maintainer": {
+        "id": 2,
+        "username": "test2",
+        "email": "test2@123.com",
+        "full_name": "李四",
+        "mobile": "13212345678",
+        "department": "DDC",
+        "job": "产品经理",
+        "leader": {
+            "id": 1,
+            "username": "test",
+            "email": "test@123.com",
+            "full_name": "张三",
+            "mobile": "13412345678",
+            "department": "DDC",
+            "job": "产品总监"
+        }
+    },
+    "number": "4368ca4594044a2f9e2978c28621772b",
+    "relate_code": "ConsumerRegisterApply_1",
+    "title": "工单主题12",
+    "status": "审批中",
+    "created_at": "2020-03-03T18:21:02.337776+08:00",
+    "creator": null
 }</code></pre>
 
 

@@ -25,10 +25,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'bc6a6docx*#+41%hq!ro9ljy^lc6_q7@qd^(&+ipg@y226mm6^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(int(os.getenv('DEBUG', 1)))
 
 ALLOWED_HOSTS = ['*']
 
+AUTH_USER_MODEL = 'tickets.User'
 
 # Application definition
 

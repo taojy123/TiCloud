@@ -3,28 +3,85 @@ from django.shortcuts import render
 
 from rest_framework import viewsets
 from django_filters import rest_framework as filters
+from rest_framework.decorators import list_route, action
+from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
+from rest_framework.response import Response
 
-from tickets.models import ConsumerTrialApply, ConsumerLaunchApply, VendorApply, VendorApiApply, ProductLaunchApply, \
-    Ticket
-from tickets.serializers import ConsumerTrialApplySerializer, ConsumerLaunchApplySerializer, VendorApplySerializer, \
-    VendorApiApplySerializer, ProductLaunchApplySerializer, TicketSerializer
+from tickets.models import ConsumerTrialApply, VendorApply, VendorApiApply, ProductLaunchApply, \
+    Ticket, User, ConsumerRegisterApply, ConsumerOrderApply
+from tickets.serializers import ConsumerTrialApplySerializer, VendorApplySerializer, \
+    VendorApiApplySerializer, ProductLaunchApplySerializer, TicketSerializer, UserSerializer, \
+    ConsumerRegisterApplySerializer, ConsumerOrderApplySerializer
 
 
 def redirect_to_doc(request):
     return HttpResponseRedirect('/static/docs/api.html')
 
 
-class ConsumerTrialApplyFilter(filters.FilterSet):
+class UserFilter(filters.FilterSet):
     order_by = filters.OrderingFilter(fields=['id', 'username'])
+
+    class Meta:
+        model = User
+        fields = {
+            'full_name': ['icontains'],
+        }
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    serializer_class = UserSerializer
+    filter_class = UserFilter
+    queryset = User.objects.order_by('id')
+    permission_classes = [IsAuthenticatedOrReadOnly]
+    
+    @action(detail=False, permission_classes=[IsAuthenticated])
+    def myself(self, request):
+        """
+        获取当前登录用户信息
+        """
+        serializer = self.get_serializer(request.user)
+        return Response(serializer.data)
+
+
+class ConsumerRegisterApplyFilter(filters.FilterSet):
+    order_by = filters.OrderingFilter(fields=['id'])
+
+    class Meta:
+        model = ConsumerRegisterApply
+        fields = {
+            'id': ['exact', 'in'],
+        }
+
+
+class ConsumerRegisterApplyViewSet(viewsets.ModelViewSet):
+    serializer_class = ConsumerRegisterApplySerializer
+    filter_class = ConsumerRegisterApplyFilter
+    queryset = ConsumerRegisterApply.objects.order_by('id')
+
+
+class ConsumerOrderApplyFilter(filters.FilterSet):
+    order_by = filters.OrderingFilter(fields=['id'])
+
+    class Meta:
+        model = ConsumerOrderApply
+        fields = {
+            'id': ['exact', 'in'],
+        }
+
+
+class ConsumerOrderApplyViewSet(viewsets.ModelViewSet):
+    serializer_class = ConsumerOrderApplySerializer
+    filter_class = ConsumerOrderApplyFilter
+    queryset = ConsumerOrderApply.objects.order_by('id')
+
+
+class ConsumerTrialApplyFilter(filters.FilterSet):
+    order_by = filters.OrderingFilter(fields=['id'])
 
     class Meta:
         model = ConsumerTrialApply
         fields = {
-            'creator': ['exact'],
-            'creator_department': ['exact'],
-            'org_name_zh': ['icontains'],
-            'org_name_en': ['icontains'],
-            'org_number': ['exact']
+            'id': ['exact', 'in'],
         }
 
 
@@ -34,36 +91,13 @@ class ConsumerTrialApplyViewSet(viewsets.ModelViewSet):
     queryset = ConsumerTrialApply.objects.order_by('id')
 
 
-class ConsumerLaunchApplyFilter(filters.FilterSet):
-    order_by = filters.OrderingFilter(fields=['id', 'username'])
-
-    class Meta:
-        model = ConsumerLaunchApply
-        fields = {
-            'creator': ['exact'],
-            'creator_department': ['exact'],
-            'org_name_zh': ['icontains'],
-            'org_name_en': ['icontains'],
-            'org_number': ['exact']
-        }
-
-
-class ConsumerLaunchApplyViewSet(viewsets.ModelViewSet):
-    serializer_class = ConsumerLaunchApplySerializer
-    filter_class = ConsumerLaunchApplyFilter
-    queryset = ConsumerLaunchApply.objects.order_by('id')
-
-
 class VendorApplyFilter(filters.FilterSet):
-    order_by = filters.OrderingFilter(fields=['id', 'org_code'])
+    order_by = filters.OrderingFilter(fields=['id'])
 
     class Meta:
         model = VendorApply
         fields = {
-            'creator': ['exact'],
-            'creator_department': ['exact'],
-            'org_name_zh': ['icontains'],
-            'org_code': ['icontains'],
+            'id': ['exact', 'in'],
         }
 
 
@@ -74,16 +108,12 @@ class VendorApplyViewSet(viewsets.ModelViewSet):
 
 
 class VendorApiApplyFilter(filters.FilterSet):
-    order_by = filters.OrderingFilter(fields=['id', 'org_code'])
+    order_by = filters.OrderingFilter(fields=['id'])
 
     class Meta:
         model = VendorApiApply
         fields = {
-            'creator': ['exact'],
-            'creator_department': ['exact'],
-            'org_code': ['icontains'],
-            'product_name': ['icontains'],
-            'api_code': ['icontains'],
+            'id': ['exact', 'in'],
         }
 
 
@@ -94,15 +124,12 @@ class VendorApiApplyViewSet(viewsets.ModelViewSet):
 
 
 class ProductLaunchApplyFilter(filters.FilterSet):
-    order_by = filters.OrderingFilter(fields=['id', 'org_code'])
+    order_by = filters.OrderingFilter(fields=['id'])
 
     class Meta:
         model = ProductLaunchApply
         fields = {
-            'creator': ['exact'],
-            'creator_department': ['exact'],
-            'product_number': ['icontains'],
-            'product_name': ['icontains'],
+            'id': ['exact', 'in'],
         }
 
 
@@ -113,15 +140,16 @@ class ProductLaunchApplyViewSet(viewsets.ModelViewSet):
 
 
 class TicketFilter(filters.FilterSet):
-    order_by = filters.OrderingFilter(fields=['id', 'org_code'])
+    order_by = filters.OrderingFilter(fields=['id'])
 
     class Meta:
         model = Ticket
         fields = {
+            'number': ['exact'],
             'title': ['icontains'],
-            'applicant': ['exact'],
-            'applicant_department': ['exact'],
-            'applicant_job': ['exact'],
+            'status': ['exact'],
+            # 'applicant__username': ['exact'],
+            # 'maintainer__username': ['exact'],
         }
 
 

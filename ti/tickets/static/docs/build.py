@@ -9,8 +9,8 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ti.settings")
 import django
 django.setup()
 
-from tickets.views import ProductLaunchApplyViewSet, ConsumerTrialApplyViewSet, ConsumerLaunchApplyViewSet, \
-    VendorApplyViewSet, VendorApiApplyViewSet, TicketViewSet
+from tickets.views import ProductLaunchApplyViewSet, ConsumerTrialApplyViewSet, VendorApplyViewSet, \
+    VendorApiApplyViewSet, TicketViewSet, UserViewSet, ConsumerRegisterApplyViewSet, ConsumerOrderApplyViewSet
 
 LOCALHOST = 'http://127.0.0.1:8000'
 
@@ -108,11 +108,38 @@ doc = Doc(
     description='',
 )
 
-api1, api2, api3 = new_restful_apis('用户测试申请', '/api/tickets/consumer_trial_apply/', ConsumerTrialApplyViewSet)
+api = Api(
+    title='用户登录',
+    uri='/api/login/',
+    method='POST',
+    description='使用用户名密码登录系统，换取 token',
+    body_params=[
+        BP(name='username', description='用户名', required=True),
+        BP(name='password', description='密码', required=True),
+    ],
+    response_example="""{"token": "xxxxx.yyyy.zzzzz"}""",
+    tips=f"""
+请在前端保存下返回的 token，之后每次请求接口时需将 token 置于 Headers 中，如：
+```
+curl -H "Authorization: JWT xxxxx.yyyy.zzzzz" {doc.host}/api/
+```
+""",
+)
+doc.apis.append(api)
+
+
+api1, api2, api3 = new_restful_apis('系统用户', '/api/tickets/user/', UserViewSet)
+doc.apis.append(api1)
+
+api1, api2, api3 = new_restful_apis('用户注册申请', '/api/tickets/consumer_register_apply/', ConsumerRegisterApplyViewSet)
 doc.apis.append(api2)
 doc.apis.append(api3)
 
-api1, api2, api3 = new_restful_apis('用户上线申请', '/api/tickets/consumer_launch_apply/', ConsumerLaunchApplyViewSet)
+api1, api2, api3 = new_restful_apis('用户订单申请', '/api/tickets/consumer_order_apply/', ConsumerOrderApplyViewSet)
+doc.apis.append(api2)
+doc.apis.append(api3)
+
+api1, api2, api3 = new_restful_apis('用户测试申请', '/api/tickets/consumer_trial_apply/', ConsumerTrialApplyViewSet)
 doc.apis.append(api2)
 doc.apis.append(api3)
 
@@ -130,6 +157,6 @@ doc.apis.append(api3)
 
 api1, api2, api3 = new_restful_apis('工单', '/api/tickets/ticket/', TicketViewSet)
 doc.apis.append(api1)
-doc.apis.append(api2)
+doc.apis.append(api3)
 
 doc.build('api.html', 'zh')

@@ -22,6 +22,6 @@ from tickets.views import redirect_to_doc
 urlpatterns = [
     path('', redirect_to_doc),
     path('api/tickets/', include('tickets.urls')),
-    path('api/obtain_jwt_token/', obtain_jwt_token),
+    path('api/login/', obtain_jwt_token),
     path('admin/', admin.site.urls),
 ]
