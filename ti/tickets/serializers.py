@@ -24,11 +24,13 @@ class UserSerializer(serializers.ModelSerializer):
         
         
 class TicketFlowSerializer(serializers.ModelSerializer):
+    
+    reviewer = UserSerializer(read_only=True)
 
     class Meta:
         model = TicketFlow
         fields = '__all__'
-        read_only_fields = ['updated_at']
+        read_only_fields = ['relate_code', 'updated_at']
         
         
 class AttachmentSerializer(serializers.ModelSerializer):
@@ -53,7 +55,8 @@ class TicketSerializer(serializers.ModelSerializer):
 
 
 class ApplySerializer(serializers.ModelSerializer):
-    
+
+    relate_code = serializers.CharField(read_only=True)
     ticket = TicketSerializer(read_only=True)
     title = serializers.CharField(write_only=True, label='工单任务主题')
     applicant_username = serializers.CharField(write_only=True, label='工单申请人', help_text='一般是自己')
@@ -67,6 +70,8 @@ class ApplySerializer(serializers.ModelSerializer):
         maintainer = User.objects.filter(username=maintainer_username).first()
         instance = super().create(validated_data)
         relate_code = f'{instance.__class__.__name__}_{instance.id}'
+        instance.relate_code = relate_code
+        instance.save()
         ticket = Ticket()
         ticket.number = uuid.uuid4().hex
         ticket.relate_code = relate_code
@@ -75,8 +80,24 @@ class ApplySerializer(serializers.ModelSerializer):
         ticket.maintainer = maintainer
         ticket.status = '审批中'
         ticket.save()
+        self.create_flows(ticket)
         return instance
-
+    
+    def create_flows(self, ticket):
+        applicant = ticket.applicant
+        leader1 = applicant.leader or applicant
+        leader2 = User.objects.filter(department='ITC', job='开发总监').first()
+        ticket.ticketflow_set.create(
+            sequence=1,
+            reviewer=leader1,
+        )
+        ticket.ticketflow_set.create(
+            sequence=2,
+            reviewer=leader2,
+        )
+        ticket.current_reviewer = ticket.current_flow.reviewer
+        ticket.save()
+        
 
 class ConsumerRegisterApplySerializer(ApplySerializer):
     
@@ -93,21 +114,6 @@ class ConsumerOrderApplySerializer(ApplySerializer):
 
 
 class ConsumerTrialApplySerializer(ApplySerializer):
-    
-    def create(self, validated_data):
-        # todo 定义审批流程
-        instance = super().create(validated_data)
-        ticket = instance.ticket
-        assert ticket
-        ticket.ticketflow_set.create(
-            sequence=1,
-            handler_name='test',
-        )
-        ticket.ticketflow_set.create(
-            sequence=2,
-            handler_name='test2',
-        )
-        return instance
     
     class Meta:
         model = ConsumerTrialApply
