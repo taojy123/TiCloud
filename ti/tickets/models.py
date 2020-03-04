@@ -13,7 +13,7 @@ class User(AbstractUser):
     mobile = models.CharField(max_length=32, blank=True, verbose_name='手机')
     department = models.CharField(max_length=32, blank=True, verbose_name='部门')
     job = models.CharField(max_length=32, blank=True, verbose_name='职位')
-    leader = models.ForeignKey('self', blank=True, null=True, on_delete=models.SET_NULL, verbose_name='上级')
+    leader = models.ForeignKey('self', blank=True, null=True, on_delete=models.SET_NULL, verbose_name='上级主管')
 
     class Meta:
         verbose_name = verbose_name_plural = '用户'
