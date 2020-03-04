@@ -65,10 +65,10 @@ class ConsumerRegisterApplyViewSet(viewsets.ModelViewSet):
     @action(methods=['GET'], detail=False)
     def make_username(self, request):
         """
-        生成可用用户名
-        传入参数 `short_name`
-        根据传入的参数，在后面添加 4 位随机数字，组成 `useranme` 并返回
-        后端保证生成的 `username` 不与系统现存用户重复
+        生成可用的用户名
+        GET 参数:
+        `short_name`: 根据传入的参数，在后面添加 4 位随机数字，组成 `username` 并返回
+        后端保证生成的 `username` 不与系统现存的重复
         请求返回：`{"username": "abc7824"}`
         """
         short_name = request.query_params.get('short_name', '')
@@ -127,6 +127,24 @@ class VendorApplyViewSet(viewsets.ModelViewSet):
     serializer_class = VendorApplySerializer
     filter_class = VendorApplyFilter
     queryset = VendorApply.objects.order_by('id')
+    
+    @action(methods=['GET'], detail=False)
+    def make_org_code(self, request):
+        """
+        生成可用的机构编码
+        GET 参数:
+        `short_name`: 根据传入的参数，在后面添加 4 位随机数字，组成 `org_code` 并返回
+        后端保证生成的 `org_code` 不与系统现存的重复
+        请求返回：`{"org_code": "abc7824"}`
+        """
+        short_name = request.query_params.get('short_name', '')
+        org_code = short_name
+        for i in range(1000):
+            n = random.randint(1000, 9999)
+            org_code = short_name + str(n)
+            if not VendorApiApply.enabled_objects().filter(org_code=org_code).exists():
+                break
+        return Response({'org_code': org_code})
 
 
 class VendorApiApplyFilter(filters.FilterSet):
