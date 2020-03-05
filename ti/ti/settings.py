@@ -196,4 +196,4 @@ JWT_AUTH = {
 }
 
 # Tiadmin
-TIADMIN_HOST = 'http://127.0.0.1:8001'
+TIADMIN_HOST = os.getenv('TIADMIN_HOST') or 'http://127.0.0.1:8001'
