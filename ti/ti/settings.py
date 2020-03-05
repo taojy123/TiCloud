@@ -130,6 +130,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# authentication
+AUTHENTICATION_BACKENDS = [
+    'ti.backends.TiadminUserBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 
 # Admins Email
 ADMINS = (
@@ -189,3 +195,5 @@ JWT_AUTH = {
     'JWT_AUTH_COOKIE': 'JWT',
 }
 
+# Tiadmin
+TIADMIN_HOST = 'http://127.0.0.1:8001'

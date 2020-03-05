@@ -8,20 +8,20 @@ def make_plural(name):
     if name.endswith('y'):
         return name[:-1] + 'ies'
     return name + 's'
-    
-    
+
+
 class User(AbstractUser):
     """
     include：
         username、password、email、is_active、is_staff、is_superuser
     """
-
+    
     full_name = models.CharField(max_length=32, blank=True, verbose_name='姓名')
     mobile = models.CharField(max_length=32, blank=True, verbose_name='手机')
     department = models.CharField(max_length=32, blank=True, verbose_name='部门')
     job = models.CharField(max_length=32, blank=True, verbose_name='职位')
     leader = models.ForeignKey('self', blank=True, null=True, on_delete=models.SET_NULL, verbose_name='上级主管')
-
+    
     class Meta:
         verbose_name = verbose_name_plural = '用户'
         swappable = 'AUTH_USER_MODEL'
@@ -31,19 +31,23 @@ class Ticket(models.Model):
     number = models.CharField(max_length=128, blank=True, unique=True, verbose_name='工单号', help_text='唯一标识')
     relate_code = models.CharField(max_length=128, blank=True, verbose_name='关联代码', help_text='系统自动生成，用于绑定申请记录')
     title = models.CharField(max_length=128, blank=True, verbose_name='任务主题')
-    applicant = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL, related_name='applicant_ticket_set', verbose_name='申请人')
-    maintainer = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL, related_name='maintainer_ticket_set', verbose_name='维护人(责任人)')
-    current_reviewer = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL, related_name='reviewer_ticket_set', verbose_name='当前审批人')
-    creator = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL, related_name='creator_ticket_set', verbose_name='真实创建者')
+    applicant = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL,
+                                  related_name='applicant_ticket_set', verbose_name='申请人')
+    maintainer = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL,
+                                   related_name='maintainer_ticket_set', verbose_name='维护人(责任人)')
+    current_reviewer = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL,
+                                         related_name='reviewer_ticket_set', verbose_name='当前审批人')
+    creator = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL,
+                                related_name='creator_ticket_set', verbose_name='真实创建者')
     status = models.CharField(max_length=32, blank=True, verbose_name='工单状态', help_text='审批中/审批通过/驳回/撤回/已生效/归档')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
-
+    
     class Meta:
         verbose_name = verbose_name_plural = '工单'
-
+    
     def __str__(self):
         return self.title
-
+    
     @property
     def flows(self):
         return self.ticketflow_set.order_by('sequence')
@@ -54,7 +58,7 @@ class Ticket(models.Model):
         if self.status != '审批中':
             return None
         return self.ticketflow_set.filter(result='').order_by('sequence').first()
-
+    
     @property
     def apply(self):
         if '_' not in self.relate_code:
@@ -80,7 +84,7 @@ class Ticket(models.Model):
     @property
     def attachments(self):
         return self.attachment_set.all()
-    
+
 
 class TicketFlow(models.Model):
     ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE, verbose_name='工单')
@@ -89,10 +93,10 @@ class TicketFlow(models.Model):
     result = models.CharField(max_length=32, blank=True, verbose_name='审批结果', help_text='同意/驳回')
     content = models.TextField(blank=True, verbose_name='审批意见')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='更新时间')
-
+    
     class Meta:
         verbose_name = verbose_name_plural = '工单审批记录'
-        
+    
     def __str__(self):
         return f'{self.ticket.title}_#{self.sequence}'
 
@@ -101,10 +105,10 @@ class Attachment(models.Model):
     ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE, verbose_name='工单')
     name = models.CharField(max_length=64, blank=True, verbose_name='名称')
     content = models.BinaryField(default=0, verbose_name='文件内容')
-
+    
     class Meta:
         verbose_name = verbose_name_plural = '附件'
-        
+    
     def __str__(self):
         return self.name
 
@@ -112,7 +116,6 @@ class Attachment(models.Model):
 # =========== applies ==============
 
 class AbstractApply(models.Model):
-    
     relate_code = models.CharField(max_length=128, blank=True, verbose_name='关联代码', help_text='系统自动生成，用于绑定工单')
     
     @property
@@ -134,7 +137,7 @@ class ConsumerRegisterApply(AbstractApply):
     name = models.CharField(max_length=64, blank=True, verbose_name='用户名称', help_text='一般是中文')
     username = models.CharField(max_length=64, blank=True, verbose_name='用户账号',
                                 help_text='唯一标识对该用户授权访问的一个访问通道编码。编码规则：机构中文全拼缩写（小写 ）+ 4位16进制随机编码，由业务输入系统 （系统应具备验证用户名唯一性功能）。用户账号由业务生成，生成的过程中，能够校验账号的唯一性')
-    category = models.IntegerField(default=0, verbose_name='用户类型', help_text='1 内部用户； 2 外部用户')
+    category = models.IntegerField(default=1, verbose_name='用户类型', help_text='1 内部用户； 2 外部用户')
     org_name_zh = models.CharField(max_length=256, blank=True, verbose_name='机构中文名称', help_text='必填')
     org_name_en = models.CharField(max_length=256, blank=True, verbose_name='机构英文名称', help_text='可以为空')
     org_number = models.CharField(max_length=128, blank=True, verbose_name='社会统一信用代码/组织机构代码',
@@ -339,4 +342,3 @@ except:
 # remain here for migrate
 class ApplyMixin:
     pass
-
