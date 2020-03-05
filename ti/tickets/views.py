@@ -41,6 +41,7 @@ class UserViewSet(viewsets.ModelViewSet):
         """
         获取当前登录用户信息
         通过传入的 token 判断当前用户，并返回用户信息
+        RESPONSE
         请求返回数据结构参考用户列表接口
         """
         serializer = self.get_serializer(request.user)
@@ -66,10 +67,12 @@ class ConsumerRegisterApplyViewSet(viewsets.ModelViewSet):
     def make_username(self, request):
         """
         生成可用的用户名
-        GET 参数:
-        `short_name`: 根据传入的参数，在后面添加 4 位随机数字，组成 `username` 并返回
+        GET
+        short_name: 传入名
+        RESPONSE
+        根据传入的参数，在后面添加 4 位随机数字，组成 `username` 并返回
         后端保证生成的 `username` 不与系统现存的重复
-        请求返回：`{"username": "abc7824"}`
+        如请求返回：`{"username": "abc7824"}`
         """
         short_name = request.query_params.get('short_name', '')
         username = short_name
@@ -132,8 +135,10 @@ class VendorApplyViewSet(viewsets.ModelViewSet):
     def make_org_code(self, request):
         """
         生成可用的机构编码
-        GET 参数:
-        `short_name`: 根据传入的参数，在后面添加 4 位随机数字，组成 `org_code` 并返回
+        GET
+        short_name: 传入名
+        RESPONSE
+        根据传入的参数，在后面添加 4 位随机数字，组成 `org_code` 并返回
         后端保证生成的 `org_code` 不与系统现存的重复
         请求返回：`{"org_code": "abc7824"}`
         """
@@ -203,9 +208,10 @@ class TicketViewSet(viewsets.ModelViewSet):
         """
         审批工单
         只有 `当前审批人` 才能对工单进行审批操作
-        POST 参数:
-        `result`: 审批结果，可选值 `同意` / `驳回`
-        `content`: 审批意见，可为空
+        POST
+        result: 审批结果，可选值 `同意` / `驳回`
+        content: 审批意见，可为空
+        RESPONSE
         请求返回工单信息
         """
         ticket = self.get_object()
@@ -240,6 +246,7 @@ class TicketViewSet(viewsets.ModelViewSet):
         """
         撤回工单
         只有 `申请人` 才能对工单进行撤回操作
+        RESPONSE
         请求返回工单信息
         """
         ticket = self.get_object()

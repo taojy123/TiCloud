@@ -13,8 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import re
+
+from django.conf import settings
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
+from django.views.static import serve
 from rest_framework_jwt.views import obtain_jwt_token
 
 from tickets.views import redirect_to_doc
@@ -22,6 +26,10 @@ from tickets.views import redirect_to_doc
 urlpatterns = [
     path('', redirect_to_doc),
     path('api/tickets/', include('tickets.urls')),
+    path('api/rest_framework/', include('rest_framework.urls')),
     path('api/login/', obtain_jwt_token),
     path('admin/', admin.site.urls),
+    re_path('^' + re.escape(settings.STATIC_URL.lstrip('/')) + '(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT})
 ]
+
+
