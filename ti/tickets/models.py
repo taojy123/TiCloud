@@ -3,6 +3,13 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
+def make_plural(name):
+    assert isinstance(name, str)
+    if name.endswith('y'):
+        return name[:-1] + 'ies'
+    return name + 's'
+    
+    
 class User(AbstractUser):
     """
     include：
@@ -67,6 +74,7 @@ class Ticket(models.Model):
                 char = '_' + char
             res_name += char
         res_name = res_name.lower().strip('_')
+        res_name = make_plural(res_name)
         return f'/api/tickets/{res_name}/{apply_id}/'
     
     @property
@@ -239,6 +247,15 @@ class VendorApiApply(AbstractApply):
     
     def __str__(self):
         return self.product_name
+    
+    @property
+    def vendor_apply(self):
+        return VendorApply.enabled_objects().filter(org_code=self.org_code).first()
+    
+    @property
+    def org_number(self):
+        vendor_apply = self.vendor_apply
+        return vendor_apply.org_number if vendor_apply else ''
 
 
 class ProductLaunchApply(AbstractApply):

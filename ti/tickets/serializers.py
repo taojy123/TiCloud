@@ -129,6 +129,8 @@ class VendorApplySerializer(ApplySerializer):
 
 class VendorApiApplySerializer(ApplySerializer):
     
+    org_number = serializers.CharField(read_only=True)
+    
     class Meta:
         model = VendorApiApply
         fields = '__all__'

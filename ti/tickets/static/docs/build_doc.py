@@ -162,28 +162,28 @@ api = Api(
 doc.add_api(api)
 
 
-api1, api2, api3, actions = new_restful_apis('系统用户', '/api/tickets/user/', UserViewSet)
+api1, api2, api3, actions = new_restful_apis('系统用户', '/api/tickets/users/', UserViewSet)
 doc.add_apis(api1, *actions)
 
-api1, api2, api3, actions = new_restful_apis('用户注册申请', '/api/tickets/consumer_register_apply/', ConsumerRegisterApplyViewSet)
+api1, api2, api3, actions = new_restful_apis('用户注册申请', '/api/tickets/consumer_register_applies/', ConsumerRegisterApplyViewSet)
 doc.add_apis(api2, api3, *actions)
 
-api1, api2, api3, actions = new_restful_apis('用户订单申请', '/api/tickets/consumer_order_apply/', ConsumerOrderApplyViewSet)
+api1, api2, api3, actions = new_restful_apis('用户订单申请', '/api/tickets/consumer_order_applies/', ConsumerOrderApplyViewSet)
 doc.add_apis(api2, api3, *actions)
 
-api1, api2, api3, actions = new_restful_apis('用户测试申请', '/api/tickets/consumer_trial_apply/', ConsumerTrialApplyViewSet)
+api1, api2, api3, actions = new_restful_apis('用户测试申请', '/api/tickets/consumer_trial_applies/', ConsumerTrialApplyViewSet)
 doc.add_apis(api2, api3, *actions)
 
-api1, api2, api3, actions = new_restful_apis('第三方供应商注册申请', '/api/tickets/vendor_apply/', VendorApplyViewSet)
+api1, api2, api3, actions = new_restful_apis('第三方供应商注册申请', '/api/tickets/vendor_applies/', VendorApplyViewSet)
 doc.add_apis(api2, api3, *actions)
 
-api1, api2, api3, actions = new_restful_apis('第三方API接入申请', '/api/tickets/vendor_api_apply/', VendorApiApplyViewSet)
+api1, api2, api3, actions = new_restful_apis('第三方API接入申请', '/api/tickets/vendor_api_applies/', VendorApiApplyViewSet)
 doc.add_apis(api2, api3, *actions)
 
-api1, api2, api3, actions = new_restful_apis('产品上线申请', '/api/tickets/product_launch_apply/', ProductLaunchApplyViewSet)
+api1, api2, api3, actions = new_restful_apis('产品上线申请', '/api/tickets/product_launch_applies/', ProductLaunchApplyViewSet)
 doc.add_apis(api2, api3, *actions)
 
-api1, api2, api3, actions = new_restful_apis('工单', '/api/tickets/ticket/', TicketViewSet)
+api1, api2, api3, actions = new_restful_apis('工单', '/api/tickets/tickets/', TicketViewSet)
 doc.add_apis(api1, api3, *actions)
 
 doc.build('api.html', 'zh')
