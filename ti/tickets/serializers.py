@@ -47,6 +47,7 @@ class TicketSerializer(serializers.ModelSerializer):
     apply_uri = serializers.CharField(read_only=True)
     applicant = UserSerializer(read_only=True)
     maintainer = UserSerializer(read_only=True)
+    current_reviewer = UserSerializer(read_only=True)
 
     class Meta:
         model = Ticket
