@@ -220,20 +220,23 @@ class TicketViewSet(viewsets.ModelViewSet):
         content = request.data.get('content', '')
         flow = ticket.current_flow
         if not flow:
-            return exceptions.ParseError('此工单不可审批')
+            raise exceptions.ParseError('此工单不可审批')
         if not ticket.current_reviewer:
             ticket.current_reviewer = flow.reviewer
             ticket.save()
         assert ticket.current_reviewer == flow.reviewer, f'Ticket#{ticket.id}.current_reviewer 异常'
         if ticket.current_reviewer != user:
-            return exceptions.ParseError('只有 `当前审批人` 才能对工单进行审批操作')
+            raise exceptions.ParseError('只有 `当前审批人` 才能对工单进行审批操作')
         if result not in ['同意', '驳回']:
-            return exceptions.ParseError('result 必须是 `同意` / `驳回`')
+            raise exceptions.ParseError('result 必须是 `同意` / `驳回`')
         flow.result = result
         flow.content = content
         flow.save()
+        ticket.current_reviewer = None
         if result == '同意':
-            if not ticket.current_flow:
+            if ticket.current_flow:
+                ticket.current_reviewer = ticket.current_flow.reviewer
+            else:
                 ticket.status = '审批通过'
         elif result == '驳回':
             ticket.status = '驳回'
@@ -252,7 +255,8 @@ class TicketViewSet(viewsets.ModelViewSet):
         ticket = self.get_object()
         user = request.user
         if ticket.applicant != user:
-            return exceptions.ParseError('只有 `申请人` 才能对工单进行撤回操作')
+            raise exceptions.ParseError('只有 `申请人` 才能对工单进行撤回操作')
+        ticket.current_reviewer = None
         ticket.status = '撤回'
         ticket.save()
         serializer = self.get_serializer(ticket)

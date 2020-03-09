@@ -8,47 +8,43 @@ from tickets.models import ConsumerTrialApply, VendorApply, VendorApiApply, Prod
 
 
 class LeaderSerializer(serializers.ModelSerializer):
-    
     class Meta:
         model = User
         fields = ['id', 'username', 'email', 'full_name', 'mobile', 'department', 'job']
 
 
 class UserSerializer(serializers.ModelSerializer):
-    
     leader = LeaderSerializer(read_only=True)
     
     class Meta:
         model = User
         fields = ['id', 'username', 'email', 'full_name', 'mobile', 'department', 'job', 'leader']
-        
-        
-class TicketFlowSerializer(serializers.ModelSerializer):
-    
-    reviewer = UserSerializer(read_only=True)
 
+
+class TicketFlowSerializer(serializers.ModelSerializer):
+    reviewer = UserSerializer(read_only=True)
+    
     class Meta:
         model = TicketFlow
         fields = '__all__'
         read_only_fields = ['relate_code', 'updated_at']
-        
-        
-class AttachmentSerializer(serializers.ModelSerializer):
 
+
+class AttachmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Attachment
         fields = '__all__'
 
 
 class TicketSerializer(serializers.ModelSerializer):
-
     flows = TicketFlowSerializer(many=True, read_only=True)
     attachments = AttachmentSerializer(many=True, read_only=True)
     apply_uri = serializers.CharField(read_only=True)
     applicant = UserSerializer(read_only=True)
     maintainer = UserSerializer(read_only=True)
     current_reviewer = UserSerializer(read_only=True)
-
+    next_reviewer = UserSerializer(read_only=True)
+    
     class Meta:
         model = Ticket
         fields = '__all__'
@@ -56,7 +52,6 @@ class TicketSerializer(serializers.ModelSerializer):
 
 
 class ApplySerializer(serializers.ModelSerializer):
-
     relate_code = serializers.CharField(read_only=True)
     ticket = TicketSerializer(read_only=True)
     title = serializers.CharField(write_only=True, label='工单任务主题')
@@ -98,38 +93,33 @@ class ApplySerializer(serializers.ModelSerializer):
         )
         ticket.current_reviewer = ticket.current_flow.reviewer
         ticket.save()
-        
+
 
 class ConsumerRegisterApplySerializer(ApplySerializer):
-    
     class Meta:
         model = ConsumerRegisterApply
         fields = '__all__'
 
 
 class ConsumerOrderApplySerializer(ApplySerializer):
-    
     class Meta:
         model = ConsumerOrderApply
         fields = '__all__'
 
 
 class ConsumerTrialApplySerializer(ApplySerializer):
-    
     class Meta:
         model = ConsumerTrialApply
         fields = '__all__'
 
 
 class VendorApplySerializer(ApplySerializer):
-    
     class Meta:
         model = VendorApply
         fields = '__all__'
 
 
 class VendorApiApplySerializer(ApplySerializer):
-    
     org_number = serializers.CharField(read_only=True)
     
     class Meta:
@@ -138,7 +128,6 @@ class VendorApiApplySerializer(ApplySerializer):
 
 
 class ProductLaunchApplySerializer(ApplySerializer):
-    
     class Meta:
         model = ProductLaunchApply
         fields = '__all__'
