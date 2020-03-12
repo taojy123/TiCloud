@@ -1,11 +1,10 @@
 import random
 
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
 
 from rest_framework import viewsets, exceptions
 from django_filters import rest_framework as filters
-from rest_framework.decorators import list_route, action
+from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
 
@@ -17,7 +16,7 @@ from tickets.serializers import ConsumerTrialApplySerializer, VendorApplySeriali
 
 
 def redirect_to_doc(request):
-    return HttpResponseRedirect('/static/docs/api.html')
+    return HttpResponseRedirect('/static/docs/tickets.html')
 
 
 class UserFilter(filters.FilterSet):

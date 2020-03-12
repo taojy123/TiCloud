@@ -1,9 +1,7 @@
-import json
 import os
 
-import requests
 from eave import *
-from rest_framework.fields import IntegerField, FloatField, DecimalField, BooleanField, empty
+from eave.utils import auto_drf_apis
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ti.settings")
 import django
@@ -11,155 +9,6 @@ django.setup()
 
 from tickets.views import ProductLaunchApplyViewSet, ConsumerTrialApplyViewSet, VendorApplyViewSet, \
     VendorApiApplyViewSet, TicketViewSet, UserViewSet, ConsumerRegisterApplyViewSet, ConsumerOrderApplyViewSet
-
-TESTHOST = 'http://127.0.0.1:8000'
-
-
-def action_description_handle(description):
-    description = description.strip()
-    lines = description.splitlines()
-    title = lines[0].strip()
-    result = {
-        'title': title,
-        'description': '',
-        'query_params': [],
-        'body_params': [],
-        'response_description': '',
-    }
-    target = 'description'
-    for line in lines[1:]:
-        line = line.strip()
-        if line == 'GET':
-            target = 'query_params'
-            continue
-        elif line == 'POST':
-            target = 'body_params'
-            continue
-        elif line == 'RESPONSE':
-            target = 'response_description'
-            continue
-        
-        if isinstance(result[target], str):
-            result[target] += line + '\n\n'
-        elif isinstance(result[target], list):
-            name, description = line.split(':', 1)
-            name = name.strip()
-            description = description.strip()
-            if target == 'query_params':
-                item = QP(name=name, description=description)
-            elif target == 'body_params':
-                item = BP(name=name, description=description)
-            else:
-                assert False
-            result[target].append(item)
-    return result
-
-
-def new_restful_apis(res_name, uri, view_set, testhost=TESTHOST):
-    # ======= GET List =======
-    api_list = Api()
-    api_list.title = res_name + '列表'
-    api_list.uri = uri
-    api_list.method = 'GET'
-    
-    api_list.query_params = []
-    filter_fields = view_set.filter_class.Meta.fields
-    for field_name, kinds in filter_fields.items():
-        for kind in kinds:
-            query_name = f'{field_name}__{kind}'
-            kind_zh = '筛选'
-            if kind == 'exact':
-                kind_zh = '指定'
-                query_name = field_name
-            elif kind in ['icontains', 'contains']:
-                kind_zh = '匹配'
-            elif kind == 'in':
-                kind_zh = '命中'
-            field_zh = view_set.serializer_class.Meta.model._meta.get_field(field_name).verbose_name
-            description = kind_zh + field_zh
-            api_list.query_params.append(QP(name=query_name, description=description))
-    
-    url = testhost + api_list.uri
-    print(url)
-    data = requests.get(url).json()
-    if len(data['results']) > 2:
-        data['results'] = [data['results'][0]]
-    api_list.response_example = json.dumps(data, ensure_ascii=False, indent=4)
-    
-    # ======= POST =======
-    api_post = Api()
-    api_post.title = '创建' + res_name
-    api_post.uri = uri
-    api_post.method = 'POST'
-    
-    serializer = view_set.serializer_class()
-    api_post.body_params = []
-    for field_name, field in serializer.fields.items():
-        if field.read_only:
-            continue
-        type = 'string'
-        if isinstance(field, IntegerField):
-            type = 'int'
-        elif isinstance(field, FloatField):
-            type = 'float'
-        elif isinstance(field, DecimalField):
-            type = 'decimal'
-        elif isinstance(field, BooleanField):
-            type = 'bool'
-        description = field.label
-        if field.help_text:
-            description += f' [{field.help_text}]'
-        required = field.required
-        default = field.default
-        if default == empty:
-            try:
-                default = view_set.serializer_class.Meta.model._meta.get_field(field_name).default
-            except:
-                # print(f'Warning: {field_name} field not found in {view_set.serializer_class.Meta.model}')
-                pass
-        api_post.body_params.append(
-            BP(name=field_name, type=type, description=description, required=required, default=default))
-    
-    if data['results']:
-        api_post.response_example = json.dumps(data['results'][0], ensure_ascii=False, indent=4)
-    
-    # ======= GET Detail =======
-    api_detail = Api()
-    api_detail.title = res_name + '详情'
-    api_detail.uri = f'{uri.rstrip("/")}/<id>/'
-    api_detail.method = 'GET'
-    api_detail.uri_params = [UP(name='id', description=f'{res_name} ID', example=1)]
-    
-    data = requests.get(url).json()
-    if data['results']:
-        url = data['results'][0].get('url')
-        if not url:
-            res_id = data['results'][0]['id']
-            url = f'{testhost}{uri.rstrip("/")}/{res_id}/'
-        data2 = requests.get(url).json()
-        api_detail.response_example = json.dumps(data2, ensure_ascii=False, indent=4)
-    
-    # ======= Actions =======
-    actions = []
-    for item in dir(view_set):
-        func = getattr(view_set, item)
-        if not all([hasattr(func, 'detail'), hasattr(func, 'url_path'), hasattr(func, 'kwargs')]):
-            continue
-        detail = func.detail
-        url_path = func.url_path
-        description = func.kwargs['description']
-        method = list(func.mapping.keys())[0].upper()
-        result = action_description_handle(description)
-        if detail:
-            action_uri = f'{uri.rstrip("/")}/<id>/{url_path}/'
-        else:
-            action_uri = f'{uri.rstrip("/")}/{url_path}/'
-        api_action = Api(uri=action_uri, method=method, **result)
-        actions.append(api_action)
-    
-    # ============================
-    
-    return api_list, api_post, api_detail, actions
 
 
 doc = Doc(
@@ -192,28 +41,28 @@ api = Api(
 doc.add_api(api)
 
 
-api1, api2, api3, actions = new_restful_apis('系统用户', '/api/tickets/users/', UserViewSet)
+api1, api2, api3, actions = auto_drf_apis('系统用户', '/api/tickets/users/', UserViewSet)
 doc.add_apis(api1, *actions)
 
-api1, api2, api3, actions = new_restful_apis('用户注册申请', '/api/tickets/consumer_register_applies/', ConsumerRegisterApplyViewSet)
+api1, api2, api3, actions = auto_drf_apis('用户注册申请', '/api/tickets/consumer_register_applies/', ConsumerRegisterApplyViewSet)
 doc.add_apis(api2, api3, *actions)
 
-api1, api2, api3, actions = new_restful_apis('用户订单申请', '/api/tickets/consumer_order_applies/', ConsumerOrderApplyViewSet)
+api1, api2, api3, actions = auto_drf_apis('用户订单申请', '/api/tickets/consumer_order_applies/', ConsumerOrderApplyViewSet)
 doc.add_apis(api2, api3, *actions)
 
-api1, api2, api3, actions = new_restful_apis('用户测试申请', '/api/tickets/consumer_trial_applies/', ConsumerTrialApplyViewSet)
+api1, api2, api3, actions = auto_drf_apis('用户测试申请', '/api/tickets/consumer_trial_applies/', ConsumerTrialApplyViewSet)
 doc.add_apis(api2, api3, *actions)
 
-api1, api2, api3, actions = new_restful_apis('第三方供应商注册申请', '/api/tickets/vendor_applies/', VendorApplyViewSet)
+api1, api2, api3, actions = auto_drf_apis('第三方供应商注册申请', '/api/tickets/vendor_applies/', VendorApplyViewSet)
 doc.add_apis(api2, api3, *actions)
 
-api1, api2, api3, actions = new_restful_apis('第三方API接入申请', '/api/tickets/vendor_api_applies/', VendorApiApplyViewSet)
+api1, api2, api3, actions = auto_drf_apis('第三方API接入申请', '/api/tickets/vendor_api_applies/', VendorApiApplyViewSet)
 doc.add_apis(api2, api3, *actions)
 
-api1, api2, api3, actions = new_restful_apis('产品上线申请', '/api/tickets/product_launch_applies/', ProductLaunchApplyViewSet)
+api1, api2, api3, actions = auto_drf_apis('产品上线申请', '/api/tickets/product_launch_applies/', ProductLaunchApplyViewSet)
 doc.add_apis(api2, api3, *actions)
 
-api1, api2, api3, actions = new_restful_apis('工单', '/api/tickets/tickets/', TicketViewSet)
+api1, api2, api3, actions = auto_drf_apis('工单', '/api/tickets/tickets/', TicketViewSet)
 doc.add_apis(api1, api3, *actions)
 
-doc.build('api.html', 'zh')
+doc.build('tickets.html', 'zh')

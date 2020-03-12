@@ -29,6 +29,7 @@ urlpatterns = [
     path('api/rest_framework/', include('rest_framework.urls')),
     path('api/login/', obtain_jwt_token),
     path('admin/', admin.site.urls),
+    # static files for debug
     re_path('^' + re.escape(settings.STATIC_URL.lstrip('/')) + '(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT})
 ]
 
