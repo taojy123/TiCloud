@@ -16,4 +16,6 @@ djangorestframework-jwt
 # celery
 # flower
 eave
+drf-yasg
+drf-spectacular
 

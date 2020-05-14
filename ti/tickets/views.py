@@ -7,6 +7,7 @@ from django_filters import rest_framework as filters
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from tickets.models import ConsumerTrialApply, VendorApply, VendorApiApply, ProductLaunchApply, \
     Ticket, User, ConsumerRegisterApply, ConsumerOrderApply

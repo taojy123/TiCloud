@@ -51,7 +51,7 @@ class TicketSerializer(serializers.ModelSerializer):
         read_only_fields = ['relate_code', 'status', 'created_at']
 
 
-class ApplySerializer(serializers.ModelSerializer):
+class ApplySerializerMinix(serializers.ModelSerializer):
     relate_code = serializers.CharField(read_only=True)
     ticket = TicketSerializer(read_only=True)
     title = serializers.CharField(write_only=True, label='工单任务主题')
@@ -95,31 +95,31 @@ class ApplySerializer(serializers.ModelSerializer):
         ticket.save()
 
 
-class ConsumerRegisterApplySerializer(ApplySerializer):
+class ConsumerRegisterApplySerializer(ApplySerializerMinix):
     class Meta:
         model = ConsumerRegisterApply
         fields = '__all__'
 
 
-class ConsumerOrderApplySerializer(ApplySerializer):
+class ConsumerOrderApplySerializer(ApplySerializerMinix):
     class Meta:
         model = ConsumerOrderApply
         fields = '__all__'
 
 
-class ConsumerTrialApplySerializer(ApplySerializer):
+class ConsumerTrialApplySerializer(ApplySerializerMinix):
     class Meta:
         model = ConsumerTrialApply
         fields = '__all__'
 
 
-class VendorApplySerializer(ApplySerializer):
+class VendorApplySerializer(ApplySerializerMinix):
     class Meta:
         model = VendorApply
         fields = '__all__'
 
 
-class VendorApiApplySerializer(ApplySerializer):
+class VendorApiApplySerializer(ApplySerializerMinix):
     org_number = serializers.CharField(read_only=True)
     
     class Meta:
@@ -127,7 +127,7 @@ class VendorApiApplySerializer(ApplySerializer):
         fields = '__all__'
 
 
-class ProductLaunchApplySerializer(ApplySerializer):
+class ProductLaunchApplySerializer(ApplySerializerMinix):
     class Meta:
         model = ProductLaunchApply
         fields = '__all__'

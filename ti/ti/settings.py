@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'django_filters',
+    
+    'drf_yasg',
+    'drf_spectacular',
 
     'tickets',
 ]
@@ -170,6 +173,7 @@ CORS_ALLOW_HEADERS = [
 
 # Rest framework
 REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',

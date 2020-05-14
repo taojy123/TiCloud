@@ -104,7 +104,7 @@ class TicketFlow(models.Model):
 class Attachment(models.Model):
     ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE, verbose_name='工单')
     name = models.CharField(max_length=64, blank=True, verbose_name='名称')
-    content = models.BinaryField(default=0, verbose_name='文件内容')
+    content = models.TextField(default=0, verbose_name='文件内容')
     
     class Meta:
         verbose_name = verbose_name_plural = '附件'
