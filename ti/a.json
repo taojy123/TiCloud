@@ -1,0 +1,1494 @@
+{
+	"openapi": "3.0.3",
+	"info": {
+		"title": "",
+		"version": "0.0.0"
+	},
+	"paths": {
+		"/api/login/": {
+			"post": {
+				"operationId": "api_login_create",
+				"description": "API View that receives a POST with a user's username and password.\n\nReturns a JSON Web Token that can be used for authenticated requests.",
+				"tags": [
+					"api"
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/JSONWebToken"
+							}
+						},
+						"application/x-www-form-urlencoded": {
+							"schema": {
+								"$ref": "#/components/schemas/JSONWebToken"
+							}
+						},
+						"multipart/form-data": {
+							"schema": {
+								"$ref": "#/components/schemas/JSONWebToken"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/JSONWebToken"
+								}
+							}
+						},
+						"description": ""
+					}
+				}
+			}
+		},
+		"/api/schema/": {
+			"get": {
+				"operationId": "api_schema_retrieve",
+				"description": "",
+				"tags": [
+					"api"
+				],
+				"security": [{
+						"jwtAuth": []
+					},
+					{
+						"cookieAuth": []
+					},
+					{
+						"basicAuth": []
+					},
+					{}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/vnd.oai.openapi+json": {
+								"schema": {
+									"type": "object",
+									"additionalProperties": {}
+								}
+							},
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"additionalProperties": {}
+								}
+							}
+						},
+						"description": ""
+					}
+				}
+			}
+		},
+		"/api/tickets/tickets/": {
+			"get": {
+				"operationId": "api_tickets_tickets_list",
+				"description": "",
+				"parameters": [{
+						"name": "number",
+						"required": false,
+						"in": "query",
+						"description": "number",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "order_by",
+						"required": false,
+						"in": "query",
+						"description": "排序",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "page",
+						"required": false,
+						"in": "query",
+						"description": "A page number within the paginated result set.",
+						"schema": {
+							"type": "integer"
+						}
+					},
+					{
+						"name": "status",
+						"required": false,
+						"in": "query",
+						"description": "status",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "title__icontains",
+						"required": false,
+						"in": "query",
+						"description": "title__icontains",
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"tags": [
+					"api"
+				],
+				"security": [{
+						"jwtAuth": []
+					},
+					{
+						"cookieAuth": []
+					},
+					{
+						"basicAuth": []
+					},
+					{}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"count": {
+											"type": "integer",
+											"example": 123
+										},
+										"next": {
+											"type": "string",
+											"nullable": true
+										},
+										"previous": {
+											"type": "string",
+											"nullable": true
+										},
+										"results": {
+											"type": "array",
+											"items": {
+												"$ref": "#/components/schemas/Ticket"
+											}
+										}
+									}
+								}
+							}
+						},
+						"description": ""
+					}
+				}
+			},
+			"post": {
+				"operationId": "api_tickets_tickets_create",
+				"description": "",
+				"tags": [
+					"api"
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Ticket"
+							}
+						},
+						"application/x-www-form-urlencoded": {
+							"schema": {
+								"$ref": "#/components/schemas/Ticket"
+							}
+						},
+						"multipart/form-data": {
+							"schema": {
+								"$ref": "#/components/schemas/Ticket"
+							}
+						}
+					}
+				},
+				"security": [{
+						"jwtAuth": []
+					},
+					{
+						"cookieAuth": []
+					},
+					{
+						"basicAuth": []
+					},
+					{}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Ticket"
+								}
+							}
+						},
+						"description": ""
+					}
+				}
+			}
+		},
+		"/api/tickets/tickets/{id}/": {
+			"get": {
+				"operationId": "api_tickets_tickets_retrieve",
+				"description": "",
+				"parameters": [{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"description": "A unique integer value identifying this 工单.",
+						"schema": {
+							"type": "integer"
+						}
+					},
+					{
+						"name": "number",
+						"required": false,
+						"in": "query",
+						"description": "number",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "order_by",
+						"required": false,
+						"in": "query",
+						"description": "排序",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "status",
+						"required": false,
+						"in": "query",
+						"description": "status",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "title__icontains",
+						"required": false,
+						"in": "query",
+						"description": "title__icontains",
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"tags": [
+					"api"
+				],
+				"security": [{
+						"jwtAuth": []
+					},
+					{
+						"cookieAuth": []
+					},
+					{
+						"basicAuth": []
+					},
+					{}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Ticket"
+								}
+							}
+						},
+						"description": ""
+					}
+				}
+			},
+			"put": {
+				"operationId": "api_tickets_tickets_update",
+				"description": "",
+				"parameters": [{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"description": "A unique integer value identifying this 工单.",
+						"schema": {
+							"type": "integer"
+						}
+					},
+					{
+						"name": "number",
+						"required": false,
+						"in": "query",
+						"description": "number",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "order_by",
+						"required": false,
+						"in": "query",
+						"description": "排序",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "status",
+						"required": false,
+						"in": "query",
+						"description": "status",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "title__icontains",
+						"required": false,
+						"in": "query",
+						"description": "title__icontains",
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"tags": [
+					"api"
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Ticket"
+							}
+						},
+						"application/x-www-form-urlencoded": {
+							"schema": {
+								"$ref": "#/components/schemas/Ticket"
+							}
+						},
+						"multipart/form-data": {
+							"schema": {
+								"$ref": "#/components/schemas/Ticket"
+							}
+						}
+					}
+				},
+				"security": [{
+						"jwtAuth": []
+					},
+					{
+						"cookieAuth": []
+					},
+					{
+						"basicAuth": []
+					},
+					{}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Ticket"
+								}
+							}
+						},
+						"description": ""
+					}
+				}
+			},
+			"patch": {
+				"operationId": "api_tickets_tickets_partial_update",
+				"description": "",
+				"parameters": [{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"description": "A unique integer value identifying this 工单.",
+						"schema": {
+							"type": "integer"
+						}
+					},
+					{
+						"name": "number",
+						"required": false,
+						"in": "query",
+						"description": "number",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "order_by",
+						"required": false,
+						"in": "query",
+						"description": "排序",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "status",
+						"required": false,
+						"in": "query",
+						"description": "status",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "title__icontains",
+						"required": false,
+						"in": "query",
+						"description": "title__icontains",
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"tags": [
+					"api"
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/PatchedTicket"
+							}
+						},
+						"application/x-www-form-urlencoded": {
+							"schema": {
+								"$ref": "#/components/schemas/PatchedTicket"
+							}
+						},
+						"multipart/form-data": {
+							"schema": {
+								"$ref": "#/components/schemas/PatchedTicket"
+							}
+						}
+					}
+				},
+				"security": [{
+						"jwtAuth": []
+					},
+					{
+						"cookieAuth": []
+					},
+					{
+						"basicAuth": []
+					},
+					{}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Ticket"
+								}
+							}
+						},
+						"description": ""
+					}
+				}
+			},
+			"delete": {
+				"operationId": "api_tickets_tickets_destroy",
+				"description": "",
+				"parameters": [{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"description": "A unique integer value identifying this 工单.",
+						"schema": {
+							"type": "integer"
+						}
+					},
+					{
+						"name": "number",
+						"required": false,
+						"in": "query",
+						"description": "number",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "order_by",
+						"required": false,
+						"in": "query",
+						"description": "排序",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "status",
+						"required": false,
+						"in": "query",
+						"description": "status",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "title__icontains",
+						"required": false,
+						"in": "query",
+						"description": "title__icontains",
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"tags": [
+					"api"
+				],
+				"security": [{
+						"jwtAuth": []
+					},
+					{
+						"cookieAuth": []
+					},
+					{
+						"basicAuth": []
+					},
+					{}
+				],
+				"responses": {
+					"204": {
+						"description": "No response body"
+					}
+				}
+			}
+		},
+		"/api/tickets/tickets/{id}/review/": {
+			"post": {
+				"operationId": "api_tickets_tickets_review_create",
+				"description": "审批工单\n只有 `当前审批人` 才能对工单进行审批操作\nPOST\nresult: 审批结果，可选值 `同意` / `驳回`\ncontent: 审批意见，可为空\nRESPONSE\n请求返回工单信息",
+				"parameters": [{
+					"name": "id",
+					"in": "path",
+					"required": true,
+					"description": "A unique integer value identifying this 工单.",
+					"schema": {
+						"type": "integer"
+					}
+				}],
+				"tags": [
+					"api"
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Ticket"
+							}
+						},
+						"application/x-www-form-urlencoded": {
+							"schema": {
+								"$ref": "#/components/schemas/Ticket"
+							}
+						},
+						"multipart/form-data": {
+							"schema": {
+								"$ref": "#/components/schemas/Ticket"
+							}
+						}
+					}
+				},
+				"security": [{
+						"jwtAuth": []
+					},
+					{
+						"cookieAuth": []
+					},
+					{
+						"basicAuth": []
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Ticket"
+								}
+							}
+						},
+						"description": ""
+					}
+				}
+			}
+		},
+		"/api/tickets/tickets/{id}/revoke/": {
+			"post": {
+				"operationId": "api_tickets_tickets_revoke_create",
+				"description": "撤回工单\n只有 `申请人` 才能对工单进行撤回操作\nRESPONSE\n请求返回工单信息",
+				"parameters": [{
+					"name": "id",
+					"in": "path",
+					"required": true,
+					"description": "A unique integer value identifying this 工单.",
+					"schema": {
+						"type": "integer"
+					}
+				}],
+				"tags": [
+					"api"
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Ticket"
+							}
+						},
+						"application/x-www-form-urlencoded": {
+							"schema": {
+								"$ref": "#/components/schemas/Ticket"
+							}
+						},
+						"multipart/form-data": {
+							"schema": {
+								"$ref": "#/components/schemas/Ticket"
+							}
+						}
+					}
+				},
+				"security": [{
+						"jwtAuth": []
+					},
+					{
+						"cookieAuth": []
+					},
+					{
+						"basicAuth": []
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Ticket"
+								}
+							}
+						},
+						"description": ""
+					}
+				}
+			}
+		},
+		"/api/tickets/users/": {
+			"get": {
+				"operationId": "api_tickets_users_list",
+				"description": "",
+				"parameters": [{
+						"name": "full_name__icontains",
+						"required": false,
+						"in": "query",
+						"description": "full_name__icontains",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "order_by",
+						"required": false,
+						"in": "query",
+						"description": "排序",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "page",
+						"required": false,
+						"in": "query",
+						"description": "A page number within the paginated result set.",
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"tags": [
+					"api"
+				],
+				"security": [{
+						"jwtAuth": []
+					},
+					{
+						"cookieAuth": []
+					},
+					{
+						"basicAuth": []
+					},
+					{}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"count": {
+											"type": "integer",
+											"example": 123
+										},
+										"next": {
+											"type": "string",
+											"nullable": true
+										},
+										"previous": {
+											"type": "string",
+											"nullable": true
+										},
+										"results": {
+											"type": "array",
+											"items": {
+												"$ref": "#/components/schemas/User"
+											}
+										}
+									}
+								}
+							}
+						},
+						"description": ""
+					}
+				}
+			},
+			"post": {
+				"operationId": "api_tickets_users_create",
+				"description": "",
+				"tags": [
+					"api"
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/User"
+							}
+						},
+						"application/x-www-form-urlencoded": {
+							"schema": {
+								"$ref": "#/components/schemas/User"
+							}
+						},
+						"multipart/form-data": {
+							"schema": {
+								"$ref": "#/components/schemas/User"
+							}
+						}
+					},
+					"required": true
+				},
+				"security": [{
+						"jwtAuth": []
+					},
+					{
+						"cookieAuth": []
+					},
+					{
+						"basicAuth": []
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/User"
+								}
+							}
+						},
+						"description": ""
+					}
+				}
+			}
+		},
+		"/api/tickets/users/myself/": {
+			"get": {
+				"operationId": "api_tickets_users_myself_retrieve",
+				"description": "获取当前登录用户信息\n通过传入的 token 判断当前用户，并返回用户信息\nRESPONSE\n请求返回数据结构参考用户列表接口",
+				"tags": [
+					"api"
+				],
+				"security": [{
+						"jwtAuth": []
+					},
+					{
+						"cookieAuth": []
+					},
+					{
+						"basicAuth": []
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/User"
+								}
+							}
+						},
+						"description": ""
+					}
+				}
+			}
+		},
+		"/api/tickets/users/{id}/": {
+			"get": {
+				"operationId": "api_tickets_users_retrieve",
+				"description": "",
+				"parameters": [{
+						"name": "full_name__icontains",
+						"required": false,
+						"in": "query",
+						"description": "full_name__icontains",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"description": "A unique integer value identifying this 用户.",
+						"schema": {
+							"type": "integer"
+						}
+					},
+					{
+						"name": "order_by",
+						"required": false,
+						"in": "query",
+						"description": "排序",
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"tags": [
+					"api"
+				],
+				"security": [{
+						"jwtAuth": []
+					},
+					{
+						"cookieAuth": []
+					},
+					{
+						"basicAuth": []
+					},
+					{}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/User"
+								}
+							}
+						},
+						"description": ""
+					}
+				}
+			},
+			"put": {
+				"operationId": "api_tickets_users_update",
+				"description": "",
+				"parameters": [{
+						"name": "full_name__icontains",
+						"required": false,
+						"in": "query",
+						"description": "full_name__icontains",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"description": "A unique integer value identifying this 用户.",
+						"schema": {
+							"type": "integer"
+						}
+					},
+					{
+						"name": "order_by",
+						"required": false,
+						"in": "query",
+						"description": "排序",
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"tags": [
+					"api"
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/User"
+							}
+						},
+						"application/x-www-form-urlencoded": {
+							"schema": {
+								"$ref": "#/components/schemas/User"
+							}
+						},
+						"multipart/form-data": {
+							"schema": {
+								"$ref": "#/components/schemas/User"
+							}
+						}
+					},
+					"required": true
+				},
+				"security": [{
+						"jwtAuth": []
+					},
+					{
+						"cookieAuth": []
+					},
+					{
+						"basicAuth": []
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/User"
+								}
+							}
+						},
+						"description": ""
+					}
+				}
+			},
+			"patch": {
+				"operationId": "api_tickets_users_partial_update",
+				"description": "",
+				"parameters": [{
+						"name": "full_name__icontains",
+						"required": false,
+						"in": "query",
+						"description": "full_name__icontains",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"description": "A unique integer value identifying this 用户.",
+						"schema": {
+							"type": "integer"
+						}
+					},
+					{
+						"name": "order_by",
+						"required": false,
+						"in": "query",
+						"description": "排序",
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"tags": [
+					"api"
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/PatchedUser"
+							}
+						},
+						"application/x-www-form-urlencoded": {
+							"schema": {
+								"$ref": "#/components/schemas/PatchedUser"
+							}
+						},
+						"multipart/form-data": {
+							"schema": {
+								"$ref": "#/components/schemas/PatchedUser"
+							}
+						}
+					}
+				},
+				"security": [{
+						"jwtAuth": []
+					},
+					{
+						"cookieAuth": []
+					},
+					{
+						"basicAuth": []
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/User"
+								}
+							}
+						},
+						"description": ""
+					}
+				}
+			},
+			"delete": {
+				"operationId": "api_tickets_users_destroy",
+				"description": "",
+				"parameters": [{
+						"name": "full_name__icontains",
+						"required": false,
+						"in": "query",
+						"description": "full_name__icontains",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"description": "A unique integer value identifying this 用户.",
+						"schema": {
+							"type": "integer"
+						}
+					},
+					{
+						"name": "order_by",
+						"required": false,
+						"in": "query",
+						"description": "排序",
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"tags": [
+					"api"
+				],
+				"security": [{
+						"jwtAuth": []
+					},
+					{
+						"cookieAuth": []
+					},
+					{
+						"basicAuth": []
+					},
+					{}
+				],
+				"responses": {
+					"204": {
+						"description": "No response body"
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"securitySchemes": {
+			"jwtAuth": {
+				"type": "http",
+				"scheme": "bearer",
+				"bearerFormat": "JWT"
+			},
+			"cookieAuth": {
+				"type": "apiKey",
+				"in": "cookie",
+				"name": "Session"
+			},
+			"basicAuth": {
+				"type": "http",
+				"scheme": "basic"
+			}
+		},
+		"schemas": {
+			"JSONWebToken": {
+				"type": "object",
+				"properties": {
+					"username": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string",
+						"writeOnly": true
+					}
+				},
+				"required": [
+					"username",
+					"password"
+				]
+			},
+			"Ticket": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "integer",
+						"readOnly": true
+					},
+					"flows": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/TicketFlow"
+						},
+						"readOnly": true
+					},
+					"attachments": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/Attachment"
+						},
+						"readOnly": true
+					},
+					"apply_uri": {
+						"type": "string",
+						"readOnly": true
+					},
+					"applicant": {
+						"allOf": [{
+							"$ref": "#/components/schemas/User"
+						}],
+						"readOnly": true
+					},
+					"maintainer": {
+						"allOf": [{
+							"$ref": "#/components/schemas/User"
+						}],
+						"readOnly": true
+					},
+					"current_reviewer": {
+						"allOf": [{
+							"$ref": "#/components/schemas/User"
+						}],
+						"readOnly": true
+					},
+					"next_reviewer": {
+						"allOf": [{
+							"$ref": "#/components/schemas/User"
+						}],
+						"readOnly": true
+					},
+					"number": {
+						"type": "string",
+						"description": "唯一标识",
+						"maxLength": 128
+					},
+					"relate_code": {
+						"type": "string",
+						"readOnly": true,
+						"description": "系统自动生成，用于绑定申请记录"
+					},
+					"title": {
+						"type": "string",
+						"maxLength": 128
+					},
+					"status": {
+						"type": "string",
+						"readOnly": true,
+						"description": "审批中/审批通过/驳回/撤回/已生效/归档"
+					},
+					"created_at": {
+						"type": "string",
+						"format": "date-time",
+						"readOnly": true
+					},
+					"creator": {
+						"type": "integer",
+						"nullable": true
+					}
+				}
+			},
+			"TicketFlow": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "integer",
+						"readOnly": true
+					},
+					"reviewer": {
+						"allOf": [{
+							"$ref": "#/components/schemas/User"
+						}],
+						"readOnly": true
+					},
+					"sequence": {
+						"type": "integer"
+					},
+					"result": {
+						"type": "string",
+						"description": "同意/驳回",
+						"maxLength": 32
+					},
+					"content": {
+						"type": "string"
+					},
+					"updated_at": {
+						"type": "string",
+						"format": "date-time",
+						"readOnly": true
+					},
+					"ticket": {
+						"type": "integer"
+					}
+				},
+				"required": [
+					"ticket"
+				]
+			},
+			"User": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "integer",
+						"readOnly": true
+					},
+					"username": {
+						"type": "string",
+						"description": "必填。150个字符或者更少。包含字母，数字和仅有的@/./+/-/_符号。",
+						"pattern": "^[\\w.@+-]+$",
+						"maxLength": 150
+					},
+					"email": {
+						"type": "string",
+						"format": "email",
+						"maxLength": 254
+					},
+					"full_name": {
+						"type": "string",
+						"maxLength": 32
+					},
+					"mobile": {
+						"type": "string",
+						"maxLength": 32
+					},
+					"department": {
+						"type": "string",
+						"maxLength": 32
+					},
+					"job": {
+						"type": "string",
+						"maxLength": 32
+					},
+					"leader": {
+						"allOf": [{
+							"$ref": "#/components/schemas/Leader"
+						}],
+						"readOnly": true
+					}
+				},
+				"required": [
+					"username"
+				]
+			},
+			"Leader": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "integer",
+						"readOnly": true
+					},
+					"username": {
+						"type": "string",
+						"description": "必填。150个字符或者更少。包含字母，数字和仅有的@/./+/-/_符号。",
+						"pattern": "^[\\w.@+-]+$",
+						"maxLength": 150
+					},
+					"email": {
+						"type": "string",
+						"format": "email",
+						"maxLength": 254
+					},
+					"full_name": {
+						"type": "string",
+						"maxLength": 32
+					},
+					"mobile": {
+						"type": "string",
+						"maxLength": 32
+					},
+					"department": {
+						"type": "string",
+						"maxLength": 32
+					},
+					"job": {
+						"type": "string",
+						"maxLength": 32
+					}
+				},
+				"required": [
+					"username"
+				]
+			},
+			"Attachment": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "integer",
+						"readOnly": true
+					},
+					"name": {
+						"type": "string",
+						"maxLength": 64
+					},
+					"content": {
+						"type": "string"
+					},
+					"ticket": {
+						"type": "integer"
+					}
+				},
+				"required": [
+					"ticket"
+				]
+			},
+			"PatchedTicket": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "integer",
+						"readOnly": true
+					},
+					"flows": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/TicketFlow"
+						},
+						"readOnly": true
+					},
+					"attachments": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/Attachment"
+						},
+						"readOnly": true
+					},
+					"apply_uri": {
+						"type": "string",
+						"readOnly": true
+					},
+					"applicant": {
+						"allOf": [{
+							"$ref": "#/components/schemas/User"
+						}],
+						"readOnly": true
+					},
+					"maintainer": {
+						"allOf": [{
+							"$ref": "#/components/schemas/User"
+						}],
+						"readOnly": true
+					},
+					"current_reviewer": {
+						"allOf": [{
+							"$ref": "#/components/schemas/User"
+						}],
+						"readOnly": true
+					},
+					"next_reviewer": {
+						"allOf": [{
+							"$ref": "#/components/schemas/User"
+						}],
+						"readOnly": true
+					},
+					"number": {
+						"type": "string",
+						"description": "唯一标识",
+						"maxLength": 128
+					},
+					"relate_code": {
+						"type": "string",
+						"readOnly": true,
+						"description": "系统自动生成，用于绑定申请记录"
+					},
+					"title": {
+						"type": "string",
+						"maxLength": 128
+					},
+					"status": {
+						"type": "string",
+						"readOnly": true,
+						"description": "审批中/审批通过/驳回/撤回/已生效/归档"
+					},
+					"created_at": {
+						"type": "string",
+						"format": "date-time",
+						"readOnly": true
+					},
+					"creator": {
+						"type": "integer",
+						"nullable": true
+					}
+				}
+			},
+			"PatchedUser": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "integer",
+						"readOnly": true
+					},
+					"username": {
+						"type": "string",
+						"description": "必填。150个字符或者更少。包含字母，数字和仅有的@/./+/-/_符号。",
+						"pattern": "^[\\w.@+-]+$",
+						"maxLength": 150
+					},
+					"email": {
+						"type": "string",
+						"format": "email",
+						"maxLength": 254
+					},
+					"full_name": {
+						"type": "string",
+						"maxLength": 32
+					},
+					"mobile": {
+						"type": "string",
+						"maxLength": 32
+					},
+					"department": {
+						"type": "string",
+						"maxLength": 32
+					},
+					"job": {
+						"type": "string",
+						"maxLength": 32
+					},
+					"leader": {
+						"allOf": [{
+							"$ref": "#/components/schemas/Leader"
+						}],
+						"readOnly": true
+					}
+				}
+			}
+		}
+	}
+}
